@@ -1,1 +1,1 @@
-web: gunicorn botanica-essentials.wsgi
+web: gunicorn botanicaessen.wsgi

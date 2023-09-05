@@ -29,9 +29,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['botanica-essentials.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    '8000-sofia-bourdon-botanica-e-cbvmwisw0s.us2.codeanyapp.com',
+    'botanica-essentials-5703813598b8.herokuapp.com', 'localhost'
+]
 
 # '8000-sofia-bourdon-botanica-e-cbvmwisw0s.us2.codeanyapp.com'
+# "mb2test.herokuapp.com", "localhost"
 
 # Application definition
 
@@ -135,6 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
