@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -25,8 +26,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     sku = models.CharField(max_length=255, unique=True)
     image_url = models.URLField(max_length=1024, blank=True, null=True)
-    image = models.ImageField(
-        upload_to='products/images/', blank=True, null=True)
+    image = CloudinaryField('image', blank=True, null=True)  # Change here
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
