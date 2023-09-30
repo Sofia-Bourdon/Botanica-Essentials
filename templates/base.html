@@ -43,10 +43,10 @@
     {% endif %}
 
     <!-- Placeholder for child templates to add a page header if needed -->
-    {% block page_header %}{% endblock %}
+    {% block page_header %} {% endblock %}
 
     <!-- Main content block where child templates will insert their content -->
-    {% block content %}{% endblock %}
+    {% block content %} {% endblock %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script
@@ -63,6 +63,6 @@
     ></script>
 
     <!-- Allow child templates to add their own JS after the core scripts -->
-    {% block postloadjs %}{% endblock %}
+    {% block postloadjs %} {% endblock %}
   </body>
 </html>
