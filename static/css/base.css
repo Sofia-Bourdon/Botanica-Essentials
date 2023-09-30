@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+}
+
+body {
+    color: #555;
+    font-family: 'Lato';
+}
+
+#icons-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.search-bar {
+    display: none;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.carousel-inner .carousel-item {
+    transition: transform 1s ease;
+}
+
+/* Banner Styles */
+.banner-section {
+    background: url('https: //res.cloudinary.com/drneh5yjs/image/upload/v1695205937/homepage_banner_gxfkor.jpg') no-repeat center center;
+    background-size: cover;
+    height: calc(50vh);
+    width: 100%;
+    position: relative;
+    z-index: 0;
+
+}
