@@ -3,8 +3,12 @@ html {
 }
 
 body {
-    color: #555;
-    font-family: 'Lato';
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#rotatingBanner{
+    border-bottom: 1px solid darkslategrey;
 }
 
 #icons-section {
@@ -12,6 +16,22 @@ body {
     align-items: center;
     justify-content: flex-end;
     margin-right: 5%;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.nav-link {
+    padding: 0.5rem;
+}
+
+.font-icon {
+    color: solid black;
+}
+
+.main-logo-link {
+    font-family:monospace;
+    color:black;
+    margin: 0%;
 }
 
 .dropdown-menu {
@@ -29,15 +49,15 @@ body {
     transition: transform 1s ease;
 }
 
-/* Banner Styles */
+/* Banner Style */
 .banner-section {
-    background: url('https: //res.cloudinary.com/drneh5yjs/image/upload/v1695205937/homepage_banner_gxfkor.jpg') no-repeat center center;
+    background-image: url("/static/images/new-background-2.jpg");
     background-size: cover;
-    height: calc(50vh);
+    height: calc(90vh);
+    padding: 5rem;
+    padding-bottom: 20rem;
     width: 100%;
     position: relative;
-    z-index: 0;
-
 }
 
 #inlineSearchBar {
@@ -48,4 +68,31 @@ body {
     transform: translateY(-50%);
     z-index: 10;
     border-radius: 10px;
+}
+
+.shop-now-button{
+    background-color: white;
+    border: 3px solid black;
+}
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }
