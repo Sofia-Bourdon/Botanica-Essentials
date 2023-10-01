@@ -7,6 +7,11 @@ body {
     font-family:Arial, Helvetica, sans-serif;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 #rotatingBanner{
     border-bottom: 1px solid darkslategrey;
 }
@@ -22,6 +27,7 @@ body {
 
 .nav-link {
     padding: 0.5rem;
+    color: solid black;
 }
 
 .font-icon {
@@ -73,6 +79,10 @@ body {
 .shop-now-button{
     background-color: white;
     border: 3px solid black;
+}
+
+.footer {
+    background-color: #F3FDE8;
 }
 
 /* Slightly larger container on xl screens */
