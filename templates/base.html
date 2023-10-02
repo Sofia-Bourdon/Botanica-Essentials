@@ -63,12 +63,43 @@
 
         <!-- Icons Section with Inline Search Bar -->
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-right">
-          <a href="#" class="text-black nav-link d-inline"><i class="fas fa-heart"></i></a>
-          <div class="d-inline-block position-relative">
-            <a href="#" class="text-black nav-link d-inline" id="searchIcon"><i class="fas fa-search"></i></a>
-            <!-- Inline Search Bar, initially hidden -->
-            <input type="text" class="form-control d-none" id="inlineSearchBar" placeholder="Search..."/>
-          </div>
+
+            <a href="#" class="text-black nav-link d-inline"><i class="fas fa-heart"></i></a>
+
+            <!-- Hidden checkbox to control visibility -->
+            <input type="checkbox" id="toggleSearch" class="d-none">
+
+            <!-- Form initially hidden -->
+            <form method="GET" id="searchIconForm" action="{% url 'products' %}" class="d-none">
+                <div class="input-group">
+                    <input class="form-control border border-black rounded-0" type="text" name="q" id="searchInput"
+                        placeholder="Search our site">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Label for the hidden checkbox. When clicked, it will change the checkbox's state. -->
+            <label class="icon" for="toggleSearch">
+                <i class="fas fa-search"></i>
+            </label>
+
+            <!-- Styles to toggle the visibility -->
+            <style>
+                #toggleSearch:checked~#searchIconForm {
+                    display: inline-flex !important;
+                }
+
+                #toggleSearch:checked~label {
+                    display: none;
+                }
+            </style>
+        </div>
+
+
           <!-- New dropdown -->
           <a href="#" class="text-black nav-link d-inline" data-toggle="dropdown"><i class="fas fa-user"></i></a>
           <div class="dropdown-menu">
@@ -146,15 +177,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+
       $(document).ready(function () {
-        $("#searchIcon").on("click", function (e) {
-          e.preventDefault();
-          $("#inlineSearchBar").toggleClass("d-none");
-          if (!$("#inlineSearchBar").hasClass("d-none")) {
-            $("#inlineSearchBar").focus();
-          }
+            // When the search icon is clicked
+            $("#searchIcon").click(function () {
+                // Toggle visibility of the form
+                $("#searchIconForm").toggleClass("d-none");
+
+                // Focus on the input field when shown
+                $("#searchInput").focus();
+            });
+
+            // When the form input is clicked, prevent it from propagating to the parent elements
+            // This ensures that clicking on the input field won't trigger the searchIcon click event
+            $("#searchInput").click(function (event) {
+                event.stopPropagation();
+            });
         });
-      });
+
     </script>
 
     {% block postloadjs %} {% endblock %}

@@ -81,6 +81,14 @@ a {
     border: 3px solid black;
 }
 
+#toggleSearch:checked~#searchIconForm {
+    display: inline-flex !important;
+}
+
+#toggleSearch:checked~label {
+    display: none;
+}
+
 .footer {
     background-color: #F3FDE8;
     bottom: 0;
