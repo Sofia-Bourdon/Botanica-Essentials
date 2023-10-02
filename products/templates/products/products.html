@@ -26,11 +26,11 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100">
                         {% if product.image %}
-                        <a href="">
+                        <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
                         </a>
                         {% else %}
-                        <a href="">
+                        <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image_url }}"
                                 alt="{{ product.name }}">
                         </a>
@@ -43,11 +43,12 @@
                                 <div class="col">
                                     <div class="row">
                                         <div class="lead mb-0">
-                                            <p class="">${{ product.price }}</p>
                                             <button type="button" class="btn btn-default btn-sm">
+                                                <p class="">${{ product.price }}</p>
                                                 <span class="glyphicon glyphicon-shopping-cart">
                                                 </span>
-                                                <b> Add to Cart </b>
+                                                <b> Add to Cart</b>
+                                                <i class="fas fa-plus"></i>
                                             </button>
                                         </div>
                                     </div>
