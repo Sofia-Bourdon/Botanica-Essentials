@@ -1,42 +1,42 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{%  url 'products' %}" id="all-products-link">
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{%  url 'products' %}" id="all-products-link" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?category=new-in" class="dropdown-item"><em>New In</em></a>
+                <a href="{% url 'products' %}?category=essentials" class="dropdown-item">Essentials line</a>
+                <a href="{% url 'products' %}?category=aloe" class="dropdown-item">Aloe line</a>
+                <a href="{% url 'products' %}?category=seaweed" class="dropdown-item">Seaweed line</a>
+                <a href="{%  url 'products' %}" class="dropdown-item"><strong>Shop all</strong></a>
+            </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link"
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="skincare-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Skincare
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item"><em>New In</em></a>
-                <a href="" class="dropdown-item">Cleansers</a>
-                <a href="" class="dropdown-item">Moisturizers</a>
-                <a href="" class="dropdown-item">Toners</a>
-                <a href="" class="dropdown-item">Masks</a>
+            <div class="dropdown-menu border-0" aria-labelledby="skincare-link">
+                <a href="{% url 'products' %}?category=cleanser" class="dropdown-item">Cleansers</a>
+                <a href="{% url 'products' %}?category=moisturizer" class="dropdown-item">Moisturizers</a>
+                <a href="{% url 'products' %}?category=toner" class="dropdown-item">Toners</a>
+                <a href="{% url 'products' %}?category=mask" class="dropdown-item">Masks</a>
             </div>
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=best-sellers" id="best-sellers-link">
                 Best Sellers
             </a>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="our-philosophy-link">
                 Our Philisophy
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
-            </div>
         </li>
     </ul>
 </div>
