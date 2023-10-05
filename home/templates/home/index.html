@@ -11,7 +11,7 @@
 
 {% block content %}
 <div class="banner-section container-fluid h-100">
-    <div class="row h-100">
+    <div class="row">
         <div class="col-7 col-md-6 my-auto">
             <h1 class="display-4 logo-font text-black">
                 Try our new Seaweed Toner
@@ -19,10 +19,46 @@
             <p><strong>Reduces irritation and keeps skin free from breakouts</strong></p>
             <div class="my-5">
                 <h4>
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop
+                        Now</a>
                 </h4>
             </div>
         </div>
+    </div>
+</div>
+<div class="container">
+    <h2 class="text-center">Get to know our Essentials collection</h2>
+    <hr>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100">
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="card-img-top img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
+                </a>
+                <div class="card-body pb-0">
+                    <p class="mb-0"><strong>{{ product.name }}</strong></p>
+                </div>
+                <div class="card-footer bg-white pt-0 border-0 text-left">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="lead mb-0">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <p class="">${{ product.price }}</p>
+                                        <span class="glyphicon glyphicon-shopping-cart">
+                                        </span>
+                                        <b> Add to Cart</b>
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

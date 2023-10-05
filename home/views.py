@@ -1,9 +1,10 @@
 from django.shortcuts import render
-
-# Create your views here.
+from products.models import Product, Category
 
 
 def index(request):
-    """ A view to return the index page """
-
-    return render(request, 'home/index.html')
+    essentials_products = Product.objects.filter(categories__slug='essentials')
+    context = {
+        'products': essentials_products
+    }
+    return render(request, 'home/index.html', context)
