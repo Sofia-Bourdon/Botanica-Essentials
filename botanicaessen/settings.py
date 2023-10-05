@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
+if os.path.exists("env.py"):
+  import env 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,14 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-sofia-bourdon-botanica-e-cbvmwisw0s.us2.codeanyapp.com',
+    '8000-sofia-bourdon-botanica-e-m5e0kmf2iq.us2.codeanyapp.com',
     'botanica-essentials-5703813598b8.herokuapp.com', 'localhost'
 ]
-
-# '8000-sofia-bourdon-botanica-e-cbvmwisw0s.us2.codeanyapp.com'
-# "mb2test.herokuapp.com", "localhost"
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -47,11 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'widget_tweaks',
-    'cloudinary',
     'home',
     'products',
     'contact',
