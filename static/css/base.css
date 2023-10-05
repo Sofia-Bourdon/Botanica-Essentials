@@ -89,7 +89,12 @@ a {
     display: none;
 }
 
+.index-text {
+    padding-top: 1.5rem;
+}
+
 .footer {
+    margin-top: 3rem;
     background-color: #F3FDE8;
     bottom: 0;
 }
