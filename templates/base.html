@@ -91,7 +91,7 @@
             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
             {% endif %}
           </div>
-            <a href="#" class="nav-link d-inline">
+            <a href="{% url 'view_bag' %}" class="nav-link d-inline">
                 <i class="fas fa-shopping-bag fa-lg"></i>
                 <span class="badge badge-light" id="shoppingBagBadge">
                     {% if item_count %}
