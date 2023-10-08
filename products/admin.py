@@ -6,6 +6,10 @@ from .models import Product, Category
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'price', 'sku', 'category']
     prepopulated_fields = {"slug": ("name",)}
+    list_filter = ['category', 'name',
+                   'price', 'sku']
+    ordering = ['name']
+    search_fields = ['name', 'price', 'sku', 'category__name']
 
 
 @admin.register(Category)
