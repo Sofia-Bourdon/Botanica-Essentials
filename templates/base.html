@@ -54,22 +54,15 @@
           <p>Sign up to our Newsletter!</p>
         </div>
 
-        <!-- Centered Logo -->
         <div class="col my-auto text-center">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h2 class="text-center"><strong>Botanica Essentials</strong></h2>
           </a>
         </div>
 
-        <!-- Icons Section with Inline Search Bar -->
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-right">
-
             <a href="#" class="text-black nav-link d-inline"><i class="fas fa-heart"></i></a>
-
-            <!-- Hidden checkbox to control visibility -->
             <input type="checkbox" id="toggleSearch" class="d-none">
-
-            <!-- Form initially hidden -->
             <form method="GET" id="searchIconForm" action="{% url 'products' %}" class="d-none">
                 <div class="input-group">
                     <input class="form-control border border-black rounded-0" type="text" name="q" id="searchInput"
@@ -81,26 +74,10 @@
                     </div>
                 </div>
             </form>
-
-            <!-- Label for the hidden checkbox. When clicked, it will change the checkbox's state. -->
             <label class="icon" for="toggleSearch">
                 <i class="fas fa-search"></i>
             </label>
-
-            <!-- Styles to toggle the visibility -->
-            <style>
-                #toggleSearch:checked~#searchIconForm {
-                    display: inline-flex !important;
-                }
-
-                #toggleSearch:checked~label {
-                    display: none;
-                }
-            </style>
         </div>
-
-
-          <!-- New dropdown -->
           <a href="#" class="text-black nav-link d-inline" data-toggle="dropdown"><i class="fas fa-user"></i></a>
           <div class="dropdown-menu">
             {% if request.user.is_authenticated %}
@@ -114,7 +91,6 @@
             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
             {% endif %}
           </div>
-          <!-- Shopping bag -->
             <a href="#" class="nav-link d-inline">
                 <i class="fas fa-shopping-bag fa-lg"></i>
                 <span class="badge badge-light" id="shoppingBagBadge">
@@ -138,11 +114,10 @@
         </nav>
       </div>
     </header>
+    {% block content %} 
+    
+    {% endblock %}
 
-    <!-- Main content block -->
-    {% block content %} {% endblock %}
-
-    <!-- Begin Footer -->
     <footer class="footer text-black pt-4 pb-2">
         <div class="container">
             <div class="row text-center">
@@ -169,10 +144,8 @@
             </div>
         </div>
     </footer>
-    <!-- End Footer -->
 
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -189,7 +162,6 @@
             });
 
             // When the form input is clicked, prevent it from propagating to the parent elements
-            // This ensures that clicking on the input field won't trigger the searchIcon click event
             $("#searchInput").click(function (event) {
                 event.stopPropagation();
             });

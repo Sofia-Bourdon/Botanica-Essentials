@@ -109,6 +109,11 @@ a {
     z-index: -1;
 }
 
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {

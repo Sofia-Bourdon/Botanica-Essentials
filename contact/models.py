@@ -13,20 +13,6 @@ STATUS_CHOICES = (
 )
 
 
-class CustomerSupport(models.Model):
-    subject = models.CharField(max_length=255)
-    description = models.TextField()
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='customer_support_requests')
-    timestamp = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
-    assigned_staff = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, blank=True, related_name='assigned_support_requests')
-
-    def __str__(self):
-        return self.subject
-
-
 class Contact(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
@@ -34,6 +20,7 @@ class Contact(models.Model):
     subject = models.CharField(max_length=255)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
 
     def __str__(self):
         return self.name

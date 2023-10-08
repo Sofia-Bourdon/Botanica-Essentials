@@ -16,7 +16,7 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="text-center">We would love to hear from you!</h2>
+    <h2 class="index-text text-center">We would love to hear from you!</h2>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <form action="{% url 'contact_us' %}" method="post">
@@ -38,7 +38,6 @@
                 {% endif %}
 
                 <div class="container my-4">
-                    <h4 class="text-center mb-4">Contact Us:</h4>
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <form method="POST" class="contact-form">
@@ -47,7 +46,7 @@
                                 {% for field in form %}
                                 {% if not field.name == "message" %}
                                 <div class="form-group mb-3">
-                                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                    <label for="{{ field.id_for_label }}" class="font-monospace font-weight-bold fs-4 form-label">{{ field.label }}</label>
                                     {{ field|add_class:"form-control" }}
                                     {% if field.errors %}
                                     <div class="invalid-feedback d-block">
@@ -61,7 +60,7 @@
                                 <!-- Render the message field -->
                                 <div class="message-card mb-4">
                                     <div class="message-header">
-                                        <label for="{{ form.message.id_for_label }}" class="form-label">{{ form.message.label }}</label>
+                                        <label for="{{ form.message.id_for_label }}" class="fs-4 font-weight-bold form-label">{{ form.message.label }}</label>
                                     </div>
                                     <div class="message-content">
                                         <textarea class="form-control" id="{{ form.message.id_for_label }}"
