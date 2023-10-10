@@ -93,9 +93,9 @@
           </div>
             <a href="{% url 'view_bag' %}" class="nav-link d-inline">
                 <i class="fas fa-shopping-bag fa-lg"></i>
-                <span class="badge badge-light" id="shoppingBagBadge">
-                    {% if item_count %}
-                    {{ item_count }}
+                <span class="badge {% if grand_total %} badge-dark font-weight-bold{% else %}badge-light {% endif %}" id="shoppingBagBadge">
+                    {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
                     {% else %}
                     0
                     {% endif %}
