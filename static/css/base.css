@@ -81,6 +81,66 @@ a {
     border: 3px solid black;
 }
 
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container .btn,
+.flex-container .qty_input {
+    margin: 0 0.5rem;
+    /* Adjusting the margin in rem */
+}
+
+
+/*  stackoverflow answer */
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.number-input input[type=number] {
+    padding: 0.5rem;
+    border: solid #ddd;
+}
+
+/* end */
+
 #toggleSearch:checked~#searchIconForm {
     display: inline-flex !important;
 }
