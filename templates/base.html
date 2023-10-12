@@ -114,7 +114,26 @@
         </nav>
       </div>
     </header>
-    {% block content %} 
+
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% block content %}
     
     {% endblock %}
 
@@ -150,25 +169,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-
       $(document).ready(function () {
-            // When the search icon is clicked
+            // Display search bar when the search icon is clicked
             $("#searchIcon").click(function () {
-                // Toggle visibility of the form
                 $("#searchIconForm").toggleClass("d-none");
-
-                // Focus on the input field when shown
                 $("#searchInput").focus();
             });
-
-            // When the form input is clicked, prevent it from propagating to the parent elements
             $("#searchInput").click(function (event) {
                 event.stopPropagation();
             });
         });
-
     </script>
 
-    {% block postloadjs %} {% endblock %}
+    {% block postloadjs %}
+    
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+
+    {% endblock %}
   </body>
 </html>
