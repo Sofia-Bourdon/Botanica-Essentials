@@ -243,6 +243,14 @@ input[type=number]::-webkit-outer-spin-button {
     overflow-y: auto;
 }
 
+.primaryAction {
+    margin-top: 1rem;
+}
+
+.fa-chevron-right {
+    margin: 1rem;
+}
+
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
