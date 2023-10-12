@@ -61,7 +61,7 @@
         </div>
 
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-right">
-            <a href="#" class="text-black nav-link d-inline"><i class="fas fa-heart"></i></a>
+            <a href="{% url 'view_wishlist' %}" class="text-black nav-link d-inline"><i class="fas fa-heart"></i></a>
             <input type="checkbox" id="toggleSearch" class="d-none">
             <form method="GET" id="searchIconForm" action="{% url 'products' %}" class="d-none">
                 <div class="input-group">
