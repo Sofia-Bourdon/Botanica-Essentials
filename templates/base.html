@@ -32,7 +32,7 @@
     <title>Botanica Essentials{% block extra_title %}{% endblock %}</title>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Rotating Banner -->
     <div id="rotatingBanner" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
@@ -144,9 +144,11 @@
     </div>
     {% endif %}
 
-    {% block content %}
-    
-    {% endblock %}
+    <div class="flex-grow-1">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
 
     <footer class="footer text-black pt-4 pb-2">
         <div class="container">
