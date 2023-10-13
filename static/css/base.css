@@ -156,7 +156,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .footer {
     margin-top: 3rem;
-    background-color: #F3FDE8;
+    background-color: white;
+    border: 1px solid gray;
     bottom: 0;
 }
 
@@ -263,6 +264,11 @@ body {
 
 .flex-grow-1 {
     flex: 1;
+}
+
+.submit-button {
+    background-color: white;
+    border: 1px solid gray;
 }
 
 
