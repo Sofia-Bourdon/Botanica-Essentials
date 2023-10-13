@@ -60,43 +60,58 @@
           </a>
         </div>
 
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-right">
-            <a href="{% url 'view_wishlist' %}" class="text-black nav-link d-inline"><i class="fas fa-heart"></i></a>
-            <input type="checkbox" id="toggleSearch" class="d-none">
-            <form method="GET" id="searchIconForm" action="{% url 'products' %}" class="d-none">
-                <div class="input-group">
-                    <input class="form-control border border-black rounded-0" type="text" name="q" id="searchInput"
-                        placeholder="Search our site">
-                    <div class="input-group-append">
-                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-right d-flex align-items-center justify-content-end">
+            <!-- Wishlist icon -->
+            <div class="col-auto p-auto">
+                <a href="{% url 'view_wishlist' %}" class="text-black nav-link d-inline"><i class="fas fa-heart"></i></a>
+            </div>
+        
+            <!-- Search bar toggle & form -->
+            <div class="col-auto p-auto">
+                <input type="checkbox" id="toggleSearch" class="d-none">
+                <label class="icon" for="toggleSearch">
+                    <i class="fas fa-search"></i>
+                </label>
+                <form method="GET" id="searchIconForm" action="{% url 'products' %}" class="d-none">
+                    <div class="input-group">
+                        <input class="form-control border border-black rounded-0" type="text" name="q" id="searchInput"
+                            placeholder="Search our site">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
+                </form>
+            </div>
+        
+            <!-- User icon & dropdown -->
+            <div class="col-auto p-auto">
+                <a href="#" class="text-black nav-link d-inline" data-toggle="dropdown"><i class="fas fa-user"></i></a>
+                <div class="dropdown-menu">
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <a href="" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                    <a href="" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
                 </div>
-            </form>
-            <label class="icon" for="toggleSearch">
-                <i class="fas fa-search"></i>
-            </label>
-        </div>
-          <a href="#" class="text-black nav-link d-inline" data-toggle="dropdown"><i class="fas fa-user"></i></a>
-          <div class="dropdown-menu">
-            {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-            <a href="" class="dropdown-item">Product Management</a>
-            {% endif %}
-            <a href="" class="dropdown-item">My Profile</a>
-            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-            {% else %}
-            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-            {% endif %}
-          </div>
-            <a href="{% url 'view_bag' %}" class="nav-link d-inline">
-                <i class="fas fa-shopping-bag fa-lg"></i>
-                <span class="badge {% if grand_total %} badge-dark font-weight-bold{% else %}badge-light {% endif %}" id="shoppingBagBadge">
-                    {{ product_count }}
-                </span>
-            </a>
+            </div>
+        
+            <!-- Shopping Bag icon -->
+            <div class="col-auto p-auto">
+                <a href="{% url 'view_bag' %}" class="nav-link d-inline p-0">
+                    <i class="fas fa-shopping-bag fa-lg"></i>
+                    <span class="badge {% if grand_total %} badge-dark font-weight-bold{% else %}badge-light {% endif %}"
+                        id="shoppingBagBadge">
+                        {{ product_count }}
+                    </span>
+                </a>
+            </div>
         </div>
       </div>
       <div class="row bg-white">

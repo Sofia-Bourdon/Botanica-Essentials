@@ -251,6 +251,10 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 1rem;
 }
 
+.fa-chevron-left {
+    margin: 1rem;
+}
+
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
