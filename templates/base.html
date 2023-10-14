@@ -87,7 +87,7 @@
         
             <!-- User icon & dropdown -->
             <div class="col-auto p-auto">
-                <a href="#" class="text-black nav-link d-inline" data-toggle="dropdown"><i class="far fa-user fa-lg"></i></a>
+                <a href="#" class="text-black nav-link d-inline" data-toggle="dropdown"><i class="fas fa-user fa-lg"></i></a>
                 <div class="dropdown-menu">
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
@@ -157,7 +157,7 @@
                     <h5>About us:</h5>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-black">FAQ</a></li>
-                        <li><a href="#" class="text-black">Privacy Policy</a></li>
+                        <li><a href="{% url 'privacy_policy' %}" class="text-black">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">

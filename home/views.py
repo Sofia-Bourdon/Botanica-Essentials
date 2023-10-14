@@ -8,3 +8,6 @@ def index(request):
         'products': essentials_products
     }
     return render(request, 'home/index.html', context)
+
+def privacy_policy(request):
+    return render(request, 'home/privacy_policy.html')
