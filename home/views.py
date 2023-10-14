@@ -16,3 +16,7 @@ def privacy_policy(request):
 
 def faq(request):
     return render(request, 'home/faq.html')
+
+
+def our_philosophy(request):
+    return render(request, 'home/our_philosophy.html')

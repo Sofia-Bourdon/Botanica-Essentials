@@ -316,6 +316,19 @@ body {
 }
 /* end faq page */
 
+/* Our philosophy page */
+.philosophy-image {
+    max-width: 90%;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .philosophy-image {
+        max-width: 100%;
+    }
+}
+/* end philisophy page */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
