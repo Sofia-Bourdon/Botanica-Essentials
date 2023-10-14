@@ -9,5 +9,10 @@ def index(request):
     }
     return render(request, 'home/index.html', context)
 
+
 def privacy_policy(request):
     return render(request, 'home/privacy_policy.html')
+
+
+def faq(request):
+    return render(request, 'home/faq.html')
