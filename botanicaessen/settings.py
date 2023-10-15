@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'bag',
     'wishlist',
     'user',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -99,6 +100,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
                 'wishlist.contexts.wishlist_contents',
+                'checkout.contexts_processors.first_purchase_discount',
             ],
         },
     },
