@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'wishlist',
     'user',
     'checkout',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -98,10 +101,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
                 'wishlist.contexts.wishlist_contents',
-                'checkout.contexts_processors.first_purchase_discount',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

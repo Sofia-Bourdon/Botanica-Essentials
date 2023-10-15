@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -59,7 +60,7 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="" class="btn submit-button btn-lg">
+                            <a href="{% url 'checkout' %}" class="btn submit-button btn-lg">
                                 <span class="text-uppercase">Checkout</span>
                             </a>
                         </td>
