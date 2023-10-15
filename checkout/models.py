@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from products.models import Product
 
 class UserPurchase(models.Model):
+    first_purchase_made = models.BooleanField(default=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     has_made_purchase = models.BooleanField(default=False)
 
