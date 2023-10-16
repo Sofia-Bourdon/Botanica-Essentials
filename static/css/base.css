@@ -330,6 +330,14 @@ body {
 }
 /* end philisophy page */
 
+#mc_embed_signup {
+    background: #fff;
+    false;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 600px;
+}
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
