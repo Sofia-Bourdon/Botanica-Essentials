@@ -41,7 +41,7 @@ class Order(models.Model):
         """ Calculate grand total based on if the user has registered """
 
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))[
-            'lineitem_total__sum']
+            'lineitem_total__sum'] or 0
         user_purchase, created = UserPurchase.objects.get_or_create(user=self.user)
         if user_purchase.has_made_purchase:
             self.discount = self.order_total * 0.10
