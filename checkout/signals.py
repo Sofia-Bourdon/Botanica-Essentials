@@ -4,8 +4,6 @@ from django.contrib.auth.models import User
 
 from .models import OrderLineItem, UserPurchase
 
-# Your existing signals...
-
 
 @receiver(post_save, sender=OrderLineItem)
 def update_on_save(sender, instance, created, **kwargs):

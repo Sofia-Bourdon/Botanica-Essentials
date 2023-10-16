@@ -7,7 +7,7 @@ from decimal import Decimal
 
 
 def get_order_total_and_discount(bag, user):
-    order_total = Decimal('0')  # Use decimal directly
+    order_total = Decimal('0')
 
     for product_id, quantity in bag.items():
         product = Product.objects.get(id=product_id)
@@ -17,7 +17,6 @@ def get_order_total_and_discount(bag, user):
     discount = Decimal('0')
     user_purchase, _ = UserPurchase.objects.get_or_create(user=user)
     if not user_purchase.has_made_purchase:
-        # Convert the float to a Decimal here
         discount = order_total * Decimal('0.10')
 
     return order_total, discount
