@@ -12,7 +12,7 @@
                    value="{{ form.secret }}"
                    size="{{ form.secret|length }}">
         </p>
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button type="submit">{% trans "Activate" %}</button>
     </form>
 {% endblock content %}
