@@ -35,6 +35,8 @@ def cache_checkout_data(request):
 def get_order_total_and_discount(bag, user):
     order_total = Decimal('0')
 
+    print("Get order total and discount: ", user.pk)
+
     for product_id, quantity in bag.items():
         product = Product.objects.get(id=product_id)
         lineitem_total = product.price * Decimal(str(quantity))
@@ -75,6 +77,8 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+            order.order_total = order_total
+            order.discount = discount
             order.save()
             for item_id, item_data in bag.items():
                 try:
@@ -85,6 +89,7 @@ def checkout(request):
                             product=product,
                             quantity=item_data,
                         )
+                        print(order_line_item)
                         order_line_item.save()
                     else:
                         for quantity in item_data['items_by_size'].items():

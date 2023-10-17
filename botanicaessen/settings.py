@@ -30,6 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '8003-sofia-bourdon-botanica-e-m5e0kmf2iq.us2.codeanyapp.com',
     '8000-sofia-bourdon-botanica-e-m5e0kmf2iq.us2.codeanyapp.com',
     'botanica-essentials-5703813598b8.herokuapp.com', 'localhost'
 ]
