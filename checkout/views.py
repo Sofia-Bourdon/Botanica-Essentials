@@ -1,14 +1,14 @@
-from django.shortcuts import (
-    render, redirect, reverse, get_object_or_404, HttpResponse
-)
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+
 from .forms import OrderForm
-from .models import Order, UserPurchase, OrderLineItem
+from .models import Order, OrderLineItem, UserPurchase
+
 from products.models import Product
-from user.forms import UserProfileForm
 from user.models import UserProfile
+from user.forms import UserProfileForm
 from bag.contexts import bag_contents
 from decimal import Decimal
 
@@ -76,26 +76,6 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-            if request.user.is_authenticated:
-                try:
-                    profile = UserProfile.objects.get(user=request.user)
-                    order_form = OrderForm(initial={
-                        'full_name': profile.user.get_full_name(),
-                        'email': profile.user.email,
-                        'phone_number': profile.default_phone_number,
-                        'country': profile.default_country,
-                        'postcode': profile.default_postcode,
-                        'town_or_city': profile.default_town_or_city,
-                        'street_address1': profile.default_street_address1,
-                        'street_address2': profile.default_street_address2,
-                        'county': profile.default_county,
-                })
-                except UserProfile.DoesNotExist:
-                    order_form = OrderForm()
-            else:
-                order_form = OrderForm()
-            order_form.instance.user = request.user
-            order = order_form.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -139,6 +119,25 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'town_or_city': profile.default_town_or_city,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'county': profile.default_county,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
         
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
