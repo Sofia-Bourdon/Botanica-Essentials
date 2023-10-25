@@ -1,5 +1,6 @@
 asgiref==3.7.2
 bulma==1.0.1
+chardet==5.2.0
 cloudinary==1.36.0
 dj-database-url==2.1.0
 Django==3.2.20
