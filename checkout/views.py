@@ -158,7 +158,7 @@ def checkout(request):
         'order_total': order_total,
         'grand_total': grand_total,
         'discount': discount,
-        'stripe_public_key': stripe_public_key,
+        'stripe_public_key': 'pk_test_51O1njZBeAFqQQgskg1TuvYJSun8gVU0nAFqt8CsqXqQLi0tUxWijV15h6joomX4xTl4PsdbW5thnPhuz8P4fh34300E4dfuaYJ',
         'client_secret': intent.client_secret,
     }
 
