@@ -33,7 +33,7 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ALLOWED_HOSTS = [
     '8000-sofia-bourdon-botanica-e-7ksth8evw7.us2.codeanyapp.com',
-    'botanica-essentials-5703813598b8.herokuapp.com', 'localhost',
+    'botanica-essentials-5703813598b8.herokuapp.com/', 'localhost',
 ]
 
 INSTALLED_APPS = [
