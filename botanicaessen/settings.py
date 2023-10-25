@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 import dj_database_url
 if os.path.exists("env.py"):
-  import env 
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,12 +27,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ALLOWED_HOSTS = [
-    'botanica-essentials-5703813598b8.herokuapp.com', 'localhost'
+    '8000-sofia-bourdon-botanica-e-7ksth8evw7.us2.codeanyapp.com',
+    'botanica-essentials-5703813598b8.herokuapp.com', 'localhost',
 ]
 
 INSTALLED_APPS = [
@@ -208,7 +209,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
+    DEFAULT_FROM_EMAIL = 'botanicaessential@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
