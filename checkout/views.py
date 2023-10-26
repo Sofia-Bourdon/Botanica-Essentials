@@ -35,7 +35,8 @@ def cache_checkout_data(request):
 def get_order_total_and_discount(bag, user):
     order_total = Decimal('0')
 
-    print("Get order total and discount: ", user.pk)
+    if user is not None:
+        print("Get order total and discount: ", user.pk)
 
     for product_id, quantity in bag.items():
         product = Product.objects.get(id=product_id)
@@ -43,9 +44,10 @@ def get_order_total_and_discount(bag, user):
         order_total += lineitem_total
 
     discount = Decimal('0')
-    user_purchase, _ = UserPurchase.objects.get_or_create(user=user)
-    if not user_purchase.has_made_purchase:
-        discount = order_total * Decimal('0.10')
+    if user is not None:
+        user_purchase, _ = UserPurchase.objects.get_or_create(user=user)
+        if not user_purchase.has_made_purchase:
+            discount = order_total * Decimal('0.10')
 
     return order_total, discount
 
@@ -55,7 +57,11 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     bag = request.session.get('bag', {})
-    order_total, discount = get_order_total_and_discount(bag, request.user)
+    if request.user.is_authenticated:
+        order_total, discount = get_order_total_and_discount(bag, request.user)
+    else:
+        order_total, discount = get_order_total_and_discount(bag, None)
+
 
     if request.method == "POST":
         bag = request.session.get('bag', {})
