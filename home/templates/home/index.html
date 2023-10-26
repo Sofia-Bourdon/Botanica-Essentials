@@ -10,16 +10,18 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="banner-section container-fluid h-100">
     <div class="row">
         <div class="col-7 col-md-6 my-auto">
             <h1 class="display-4 logo-font text-black">
-                Try our new Seaweed Toner
+                Try our Botanical Cleanser
             </h1>
+            <h2>An absolute <strong>essential</strong> step in your routine</h2>
             <p><strong>Reduces irritation and keeps skin free from breakouts</strong></p>
             <div class="my-5">
                 <h4>
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop
+                    <a href="{% url 'product_detail' 6 %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop
                         Now</a>
                 </h4>
             </div>
@@ -82,4 +84,6 @@
         {% endfor %}
     </div>
 </div>
+
+
 {% endblock %}

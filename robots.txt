@@ -1,0 +1,4 @@
+User-agent: *
+Dissalow: /accounts/
+Dissalow: /bag/
+Sitemap: https://botanica-essentials-5703813598b8.herokuapp.com/sitemap.xml
