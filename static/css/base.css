@@ -58,7 +58,7 @@ a {
 
 /* Banner Style */
 .banner-section {
-    background-image: url("../images/new-background-2.jpg");
+    background-image: url("static/images/new-background-2.jpg");
     background-size: cover;
     height: calc(90vh);
     padding: 5rem;
