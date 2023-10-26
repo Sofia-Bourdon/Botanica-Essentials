@@ -56,17 +56,6 @@ a {
     transition: transform 1s ease;
 }
 
-/* Banner Style */
-.banner-section {
-    background-image: url("/images/new-background-2.jpg");
-    background-size: cover;
-    height: calc(90vh);
-    padding: 5rem;
-    padding-bottom: 20rem;
-    width: 100%;
-    position: relative;
-}
-
 #inlineSearchBar {
     width: 150px;
     position: absolute;
