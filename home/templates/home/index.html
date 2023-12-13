@@ -1,93 +1,137 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block page_header %}
+{% extends "base.html" %} {% load static %} {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
-{% endblock %}
+{% endblock %} {% block content %}
 
-{% block content %}
-
-<div class="banner-section container-fluid h-100" style="background-image: url{% static 'images/new-background-2.jpg' %}; background-size: cover; height: calc(90vh); padding: 5rem; padding-bottom: 20rem; width: 100%; position: relative;">
-    <div class="row">
-        <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
-                Try our Botanical Cleanser
-            </h1>
-            <h2>An absolute <strong>essential</strong> step in your routine</h2>
-            <p><strong>Reduces irritation and keeps skin free from breakouts</strong></p>
-            <div class="my-5">
-                <h4>
-                    <a href="{% url 'product_detail' 6 %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop
-                        Now</a>
-                </h4>
-            </div>
-        </div>
+<div
+  class="banner-section container-fluid h-100"
+  style="
+    background: url(static/images/new-background-2.jpg);
+    background-size: cover;
+    height: calc(90vh);
+    padding: 5rem;
+    padding-bottom: 20rem;
+    width: 100%;
+    position: relative;
+    padding: 5rem;
+    padding-bottom: 20rem;
+    width: 100%;
+    position: relative;
+  "
+>
+  <div class="row">
+    <div class="col-7 col-md-6 my-auto">
+      <h1 class="display-4 logo-font text-black">Try our Botanical Cleanser</h1>
+      <h2>An absolute <strong>essential</strong> step in your routine</h2>
+      <p>
+        <strong>Reduces irritation and keeps skin free from breakouts</strong>
+      </p>
+      <div class="my-5">
+        <h4>
+          <a
+            href="{% url 'product_detail' 6 %}"
+            class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3"
+            >Shop Now</a
+          >
+        </h4>
+      </div>
     </div>
+  </div>
 </div>
 <div class="container">
-    <h2 class="index-text text-center">Get to know our Essentials collection</h2>
-    <hr>
-    <div class="row">
-        {% for product in products %}
-        <div class="container-fluid col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="card h-100">
-                <a href="{% url 'product_detail' product.id %}">
-                    <img class="card-img-top" src="{{ product.image_url }}" alt="{{ product.name }}">
-                </a>
-                <div class="card-body pb-0">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    {% if request.user.is_superuser %}
-                    <small class="ml-3">
-                        <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                    </small>
-                    {% endif %}
-                    <div class="card-text">
-                        <div class="">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="p-3">${{ product.price }}</p>
-                                    </div>
-                                    <div class="col">
-                                            <form class="form" action="{% url 'add_to_wishlist' product.id %}" method="POST">
-                                                {% csrf_token %}
-                                                <input type="hidden" name="quantity" value="1">
-                                                <div class="row pl-2 mt-3">
-                                                    <button type="submit" class="btn" data-item_id="{{ product.id }}" id="{{ product.id }}">
-                                                        <i class="far fa-heart fa-lg"></i>
-                                                    </button>
-                                                </div>
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                            </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-white">
-                                <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="quantity" value="1">
-                                    <div class="text-center">
-                                        <button type="submit" class="btn" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                            Add to Bag
-                                            <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                    </div>
-                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+  <h2 class="index-text text-center">Get to know our Essentials collection</h2>
+  <hr />
+  <div class="row">
+    {% for product in products %}
+    <div class="container-fluid col-sm-6 col-md-6 col-lg-4 col-xl-3">
+      <div class="card h-100">
+        <a href="{% url 'product_detail' product.id %}">
+          <img
+            class="card-img-top"
+            src="{{ product.image_url }}"
+            alt="{{ product.name }}"
+          />
+        </a>
+        <div class="card-body pb-0">
+          <h5 class="card-title">{{ product.name }}</h5>
+          {% if request.user.is_superuser %}
+          <small class="ml-3">
+            <a href="{% url 'edit_product' product.id %}">Edit</a> |
+            <a class="text-danger" href="{% url 'delete_product' product.id %}"
+              >Delete</a
+            >
+          </small>
+          {% endif %}
+          <div class="card-text">
+            <div class="">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <p class="p-3">${{ product.price }}</p>
+                  </div>
+                  <div class="col">
+                    <form
+                      class="form"
+                      action="{% url 'add_to_wishlist' product.id %}"
+                      method="POST"
+                    >
+                      {% csrf_token %}
+                      <input type="hidden" name="quantity" value="1" />
+                      <div class="row pl-2 mt-3">
+                        <button
+                          type="submit"
+                          class="btn"
+                          data-item_id="{{ product.id }}"
+                          id="{{ product.id }}"
+                        >
+                          <i class="far fa-heart fa-lg"></i>
+                        </button>
+                      </div>
+                      <input
+                        type="hidden"
+                        name="redirect_url"
+                        value="{{ request.path }}"
+                      />
+                    </form>
+                  </div>
                 </div>
+              </div>
+              <div class="card-footer bg-white">
+                <form
+                  class="form"
+                  action="{% url 'add_to_bag' product.id %}"
+                  method="POST"
+                >
+                  {% csrf_token %}
+                  <input type="hidden" name="quantity" value="1" />
+                  <div class="text-center">
+                    <button
+                      type="submit"
+                      class="btn"
+                      data-item_id="{{ product.id }}"
+                      id="id_qty_{{ product.id }}"
+                    >
+                      Add to Bag
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <input
+                    type="hidden"
+                    name="redirect_url"
+                    value="{{ request.path }}"
+                  />
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-        {% endfor %}
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
-
 
 {% endblock %}

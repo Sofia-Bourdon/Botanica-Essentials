@@ -38,12 +38,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ALLOWED_HOSTS = [
-    '8000-sofia-bourdon-botanica-e-7ksth8evw7.us2.codeanyapp.com',
+    '8000-sofia-bourdon-botanica-e-ttkdwc7cn9.us2.codeanyapp.com',
     'botanica-essentials-5703813598b8.herokuapp.com', 'localhost',
 ]
 
