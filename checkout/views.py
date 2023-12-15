@@ -31,80 +31,69 @@ def cache_checkout_data(request):
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
-
 def get_order_total_and_discount(bag, user):
     order_total = Decimal('0')
-
-    if user is not None:
-        print("Get order total and discount: ", user.pk)
-
+    discount = Decimal('0')
     for product_id, quantity in bag.items():
         product = Product.objects.get(id=product_id)
         lineitem_total = product.price * Decimal(str(quantity))
         order_total += lineitem_total
-
-    discount = Decimal('0')
-    if user is not None:
-        user_purchase, _ = UserPurchase.objects.get_or_create(user=user)
-        if not user_purchase.has_made_purchase:
+    if user.is_authenticated:
+        user_purchase, created = UserPurchase.objects.get_or_create(user=user)
+        if created or not user_purchase.has_made_purchase:
             discount = order_total * Decimal('0.10')
-
+            user_purchase.has_made_purchase = True
+            user_purchase.save()
     return order_total, discount
-
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    bag = request.session.get('bag', {})
-    if request.user.is_authenticated:
-        order_total, discount = get_order_total_and_discount(bag, request.user)
-    else:
-        order_total, discount = get_order_total_and_discount(bag, None)
-
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing. Did you forget to set it in your environment?')
 
     if request.method == "POST":
         bag = request.session.get('bag', {})
         order_total, discount = get_order_total_and_discount(bag, request.user)
+
         form_data = {
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-            'country': request.POST['country'],
-            'postcode': request.POST['postcode'],
-            'town_or_city': request.POST['town_or_city'],
-            'street_address1': request.POST['street_address1'],
-            'street_address2': request.POST['street_address2'],
-            'county': request.POST['county'],
+            'full_name': request.POST.get('full_name', ''),
+            'email': request.POST.get('email', ''),
+            'phone_number': request.POST.get('phone_number', ''),
+            'country': request.POST.get('country', ''),
+            'postcode': request.POST.get('postcode', ''),
+            'town_or_city': request.POST.get('town_or_city', ''),
+            'street_address1': request.POST.get('street_address1', ''),
+            'street_address2': request.POST.get('street_address2', ''),
+            'county': request.POST.get('county', ''),
         }
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            pid = request.POST.get('client_secret').split('_secret')[0]
+            pid = request.POST.get('client_secret', '').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.order_total = order_total
             order.discount = discount
             order.save()
+
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
+                        quantity = item_data
+                    else:
+                        quantity = item_data.get('quantity', 0)
+
+                    if quantity > 0:
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
-                            quantity=item_data,
+                            quantity=quantity,
                         )
-                        print(order_line_item)
                         order_line_item.save()
-                    else:
-                        for quantity in item_data['items_by_size'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                            )
-                            order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
@@ -115,8 +104,9 @@ def checkout(request):
 
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
+        else:
+            messages.error(request, "There was an error with your form. Please double check your information.")
     else:
-        print("form is not valid")
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")
@@ -134,7 +124,7 @@ def checkout(request):
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
-                order_form = OrderForm(initial={
+                initial_data = {
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
@@ -144,31 +134,22 @@ def checkout(request):
                     'street_address1': profile.default_street_address1,
                     'street_address2': profile.default_street_address2,
                     'county': profile.default_county,
-                })
+                }
             except UserProfile.DoesNotExist:
                 messages.error(request, "User profile not found.")
-                order_form = OrderForm()
+                initial_data = {}
         else:
-            order_form = OrderForm()
-        
-    if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
+            initial_data = {}
 
+        order_form = OrderForm(initial=initial_data)
 
-    order_form = OrderForm()
-    grand_total = order_total - discount
-    template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'order_total': order_total,
-        'grand_total': grand_total,
-        'discount': discount,
-        'stripe_public_key': 'pk_test_51O1njZBeAFqQQgskg1TuvYJSun8gVU0nAFqt8CsqXqQLi0tUxWijV15h6joomX4xTl4PsdbW5thnPhuz8P4fh34300E4dfuaYJ',
-        'client_secret': intent.client_secret,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret if not request.method == "POST" else None,
     }
 
-    return render(request, template, context)
+    return render(request, 'checkout/checkout.html', context)
 
 
 def checkout_success(request, order_number):
