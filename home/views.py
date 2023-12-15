@@ -20,3 +20,7 @@ def faq(request):
 
 def our_philosophy(request):
     return render(request, 'home/our_philosophy.html')
+
+def custom_404(request, exception):
+    """Display a custom 404 page"""
+    return render(request, 'home/404.html', status=404)

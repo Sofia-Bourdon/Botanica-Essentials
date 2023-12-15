@@ -39,13 +39,21 @@
       rel="stylesheet"
       type="text/css"
     />
-    {% endblock %} {% block extra_css %} {% endblock %} {% block corejs %}
+    {% endblock %} 
+    
+    {% block extra_css %}
+    {% endblock %} 
+    
+    {% block corejs %}
     <script
       src="https://kit.fontawesome.com/e9c73d7092.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://js.stripe.com/v3/"></script>
-    {% endblock %} {% block extra_js %} {% endblock %}
+    {% endblock %} 
+    
+    {% block extra_js %} 
+    {% endblock %}
 
     <title>Botanica Essentials{% block extra_title %}{% endblock %}</title>
   </head>
@@ -178,8 +186,8 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          {% include 'includes/mobile-top-header.html' %} {% include
-          'includes/main-nav.html' %}
+          {% include 'includes/mobile-top-header.html' %} 
+          {% include 'includes/main-nav.html' %}
         </nav>
       </div>
     </header>
