@@ -21,9 +21,9 @@ if os.path.exists("env.py"):
 
 
 cloudinary.config(
-    cloud_name="drneh5yjs",
-    api_key="321728184339136",
-    api_secret="0Hs01lPPnX_Q93thFJBVMHq2T-I",
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
     secure=True,
 )
 
