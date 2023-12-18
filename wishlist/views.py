@@ -1,59 +1,64 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from user.models import UserProfile
+from .models import Wishlist
 
 from products.models import Product
 
 
+@login_required
 def view_wishlist(request):
     """ A view that renders the wishlist page """
 
     if not request.user.is_authenticated:
-        messages.info(request, 'You need to be logged in to add view your wishlist.')
+        messages.info(request, 'You need to be logged in to view your wishlist.')
         return redirect(reverse('account_login'))
 
-    return render(request, 'wishlist/wishlist.html')
+    user_profile = request.user.userprofile
+    wishlist_items = Wishlist.objects.filter(user=user_profile)
+    context = {
+        'wishlist_items': wishlist_items
+    }
+
+    return render(request, 'wishlist/wishlist.html', context)
 
 
+
+@login_required
 def add_to_wishlist(request, item_id):
     """ Add a product to the wishlist """
 
     if not request.user.is_authenticated:
-        messages.info(
-            request, 'You need to be logged in to add items to your wishlist.')
+        messages.info(request, 'You need to be logged in to add items to your wishlist.')
         return redirect(reverse('account_login'))
 
     product = get_object_or_404(Product, pk=item_id)
-    wishlist = request.session.get('wishlist', {})
+    user_profile = request.user.userprofile
 
-    if item_id not in wishlist:
-        wishlist[item_id] = True
-        request.session['wishlist'] = wishlist
-        messages.success(request, f'Added {product.name} to your wishlist!')
-    else:
+    # Check if the product is already in the wishlist
+    if Wishlist.objects.filter(user=user_profile, product=product).exists():
         messages.info(request, f'{product.name} is already in your wishlist!')
+    else:
+        Wishlist.objects.create(user=user_profile, product=product)
+        messages.success(request, f'Added {product.name} to your wishlist!')
 
     return redirect(reverse('view_wishlist'))
 
 
 def remove_from_wishlist(request, item_id):
-    """ Remove a product from the wishlist """
-
     if not request.user.is_authenticated:
-        messages.info(
-            request, 'You need to be logged in to remove items from your wishlist.')
+        messages.info(request, 'You need to be logged in to remove items from your wishlist.')
         return redirect(reverse('account_login'))
 
     product = get_object_or_404(Product, pk=item_id)
-    wishlist = request.session.get('wishlist', {})
+    user_profile = request.user.userprofile
+    wishlist_item = Wishlist.objects.filter(user=user_profile, product=product)
 
-    if item_id in wishlist:
-        del wishlist[item_id]
-        request.session['wishlist'] = wishlist
-        messages.success(
-            request, f'Removed {product.name} from your wishlist!')
+    if wishlist_item.exists():
+        wishlist_item.delete()
+        messages.success(request, f'Removed {product.name} from your wishlist!')
     else:
-        messages.error(
-            request, f'Error removing {product.name} from your wishlist')
+        messages.error(request, f'Error removing {product.name} from your wishlist')
 
     return redirect(reverse('view_wishlist'))
