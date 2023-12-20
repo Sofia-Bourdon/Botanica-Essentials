@@ -337,19 +337,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-      jQuery(document).ready(function () {
-        // Display search bar when the search icon is clicked
-        jQuery("#searchIcon").click(function () {
-          jQuery("#searchIconForm").toggleClass("d-none");
-          jQuery("#searchInput").focus();
-        });
-        jQuery("#searchInput").click(function (event) {
-          event.stopPropagation();
-        });
-      });
-    </script>
-
     {% block postloadjs %}
 
     <script type="text/javascript">
