@@ -1,87 +1,126 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block content %}
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h2 class="text-center">Frequently Asked Questions:</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="text-center">Frequently Asked Questions:</h2>
 
-            <div class="faq-item">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p><strong>Are your products suitable for all skin types, including sensitive skin?</strong></p>
-                    <span class="toggle-icon" onclick="toggleAnswer('faq1')"><i class="fas fa-plus"></i></span>
-                </div>
-                <div class="answer" id="faq1">
-                    <p>Absolutely! Our formulations are designed to cater to all skin types. However, we always recommend patch-testing any new
-                    product to ensure it's a perfect match for your skin.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p><strong>What natural ingredients are primarily used in your skincare products?</strong></p>
-                    <span class="toggle-icon" onclick="toggleAnswer('faq2')"><i class="fas fa-plus"></i></span>
-                </div>
-                <div class="answer" id="faq2" style="display: none;">
-                    <p>Our products are crafted with a blend of organic aloe vera, jojoba oil, green tea extracts, and soothing essential oils
-                    like lavender and chamomile to ensure nature's best for your skin.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p><strong>I have dry skin, especially in the winter. Which of your products would you recommend for deep hydration?</strong></p>
-                    <span class="toggle-icon" onclick="toggleAnswer('faq3')"><i class="fas fa-plus"></i></span>
-                </div>
-                <div class="answer" id="faq3" style="display: none;">
-                    <p>For dry skin, especially in winter, our Aloe line is a good choice. It's formulated for sensitive, dry skin, offering that deep
-                    hydration needed.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" id="faq4">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p><strong>Do you test on animals?</strong></p>
-                    <span class="toggle-icon" onclick="toggleAnswer('answer4')"><i class="fas fa-plus"></i></span>
-                </div>
-                <div class="answer" id="answer4" style="display: none;">
-                    <p>No, at Botanica Essentials, we're committed to cruelty-free practices. Our products are never tested on animals.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" style="display: none;" id="faq5">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p><strong>Are there any preservatives in your products?</strong></p>
-                    <span class="toggle-icon" onclick="toggleAnswer('answer5')"><i class="fas fa-plus"></i></span>
-                </div>
-                <div class="answer" id="answer5" style="display: none;">
-                    <p>While we focus on natural ingredients, we use minimal preservatives to ensure the longevity and safety of our products,
-                    always ensuring they are safe and skin-friendly.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" style="display: none;" id="faq6">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p><strong>Can I return a product I'm not happy with?</strong></p>
-                    <span class="toggle-icon" onclick="toggleAnswer('answer6')"><i class="fas fa-plus"></i></span>
-                </div>
-                <div class="answer" id="answer6" style="display: none;">
-                    <p>Absolutely! Return unopened items within 30 days for a full refund. Just ensure they're in original packaging. Need
-                    help? Contact our team!</p>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-center m-3">
-                <button class="btn submit-button" onclick="toggleFAQs()" id="viewMoreBtn">VIEW MORE</button>
-
-            </div>
-
+      <div class="faq-item">
+        <div class="d-flex justify-content-between align-items-center">
+          <p>
+            <strong
+              >Are your products suitable for all skin types, including
+              sensitive skin?</strong>
+          </p>
+            <span class="toggle-icon" onclick="toggleAnswer('faq1')">
+                <i class="fas fa-plus"></i>
+            </span>
         </div>
+        <div class="answer" id="faq1">
+          <p>
+            Absolutely! Our formulations are designed to cater to all skin
+            types. However, we always recommend patch-testing any new product to
+            ensure it's a perfect match for your skin.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="d-flex justify-content-between align-items-center">
+          <p>
+            <strong>What natural ingredients are primarily used in your skincare products?</strong>
+          </p>
+          <span class="toggle-icon" onclick="toggleAnswer('faq2')"><i class="fas fa-plus"></i></span>
+        </div>
+        <div class="answer" id="faq2" style="display: none">
+          <p>
+            Our products are crafted with a blend of organic aloe vera, jojoba
+            oil, green tea extracts, and soothing essential oils like lavender
+            and chamomile to ensure nature's best for your skin.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="d-flex justify-content-between align-items-center">
+            <p>
+                <strong
+                >I have dry skin, especially in the winter. Which of your products
+                would you recommend for deep hydration?</strong>
+            </p>
+            <span class="toggle-icon" onclick="toggleAnswer('faq3')">
+                <i class="fas fa-plus"></i>
+            </span>
+        </div>
+        <div class="answer" id="faq3" style="display: none">
+          <p>For dry skin, especially in winter, our Aloe line is a good choice.
+            It's formulated for sensitive, dry skin, offering that deep
+            hydration needed.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq4">
+        <div class="d-flex justify-content-between align-items-center">
+          <p><strong>Do you test on animals?</strong></p>
+          <span class="toggle-icon" onclick="toggleAnswer('answer4')">
+            <i class="fas fa-plus"></i></span>
+        </div>
+        <div class="answer" id="answer4" style="display: none">
+          <p>
+            No, at Botanica Essentials, we're committed to cruelty-free
+            practices. Our products are never tested on animals.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="display: none" id="faq5">
+        <div class="d-flex justify-content-between align-items-center">
+            <p><strong>Are there any preservatives in your products?</strong></p>
+            <span class="toggle-icon" onclick="toggleAnswer('answer5')">
+                <i class="fas fa-plus"></i>
+            </span>
+        </div>
+        <div class="answer" id="answer5" style="display: none">
+            <p>
+            While we focus on natural ingredients, we use minimal preservatives
+            to ensure the longevity and safety of our products, always ensuring
+            they are safe and skin-friendly.
+            </p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="display: none" id="faq6">
+        <div class="d-flex justify-content-between align-items-center">
+            <p><strong>Can I return a product I'm not happy with?</strong>
+            </p>
+            <span class="toggle-icon" onclick="toggleAnswer('answer6')">
+                <i class="fas fa-plus"></i>
+            </span>
+        </div>
+        <div class="answer" id="answer6" style="display: none">
+          <p>
+            Absolutely! Return unopened items within 30 days for a full refund.
+            Just ensure they're in original packaging. Need help? Contact our
+            team!
+          </p>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center m-3">
+        <button
+          class="btn submit-button"
+          onclick="toggleFAQs()"
+          id="viewMoreBtn">
+          VIEW MORE
+        </button>
+      </div>
     </div>
+  </div>
 </div>
 
-<script>
+<!-- <script>
     function toggleAnswer(faqId) {
     let answer = document.getElementById(faqId);
     let icon = event.target; // Targeting the 'i' element directly
@@ -116,5 +155,5 @@
         }
     }
 
-</script>
+</script> -->
 {% endblock %}
