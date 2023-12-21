@@ -5,4 +5,5 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200, null=False)
     body = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
 
