@@ -119,27 +119,19 @@
 
           <!-- User icon & dropdown -->
           <div class="col-auto p-auto">
-            <a
-              href="#"
+            <a href="#"
               class="text-black nav-link d-inline"
-              data-toggle="dropdown"
-              ><i class="fas fa-user fa-lg"></i
-            ></a>
+              data-toggle="dropdown"><i class="fas fa-user fa-lg"></i></a>
             <div class="dropdown-menu">
               {% if request.user.is_authenticated %} 
               {% if request.user.is_superuser %}
-              <a href="{% url 'add_product' %}" class="dropdown-item"
-                >Product Management</a
-              >
+              <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
               {% endif %}
               <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-              <a href="{% url 'account_logout' %}" class="dropdown-item"
-                >Logout</a
-              >
+              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
               {% else %}
               <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a
-              >
+              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
               {% endif %}
             </div>
           </div>
@@ -191,17 +183,13 @@
                     <a href="{% url 'our_philosophy' %}" class="text-black">Our Philisophy</a>
                 </li>
               <li>
-                <a href="{% url 'privacy_policy' %}" class="text-black"
-                  >Privacy Policy</a
-                >
+                <a href="{% url 'privacy_policy' %}" class="text-black">Privacy Policy</a>
               </li>
             </ul>
             <li>
-              <a
-                href="https://www.facebook.com/profile.php?id=61552639373618"
+              <a href="https://www.facebook.com/profile.php?id=61552639373618"
                 class="text-black"
-                rel="noopener">Find us on Facebook</a
-              >
+                rel="noopener">Find us on Facebook</a>
             </li>
           </div>
           <div class="col-md-4 mw-100">
@@ -327,9 +315,7 @@
             <ul class="list-unstyled">
                 <li><a href="{% url 'faq' %}" class="text-black">FAQ</a></li>
               <li>
-                <a href="{% url 'contact_us' %}" class="text-black"
-                  >Contact us</a
-                >
+                <a href="{% url 'contact_us' %}" class="text-black">Contact us</a>
               </li>
             </ul>
           </div>
