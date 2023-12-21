@@ -187,7 +187,9 @@
           <div class="col-md-4 mt-4">
             <h5>About us:</h5>
             <ul class="list-unstyled">
-              <li><a href="{% url 'faq' %}" class="text-black">FAQ</a></li>
+                <li>
+                    <a href="{% url 'our_philosophy' %}" class="text-black">Our Philisophy</a>
+                </li>
               <li>
                 <a href="{% url 'privacy_policy' %}" class="text-black"
                   >Privacy Policy</a
@@ -323,6 +325,7 @@
           <div class="col-md-4 mt-4">
             <h5>Support:</h5>
             <ul class="list-unstyled">
+                <li><a href="{% url 'faq' %}" class="text-black">FAQ</a></li>
               <li>
                 <a href="{% url 'contact_us' %}" class="text-black"
                   >Contact us</a

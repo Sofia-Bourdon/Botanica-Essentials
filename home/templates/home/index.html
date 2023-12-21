@@ -44,6 +44,7 @@
 <div class="container">
   <h2 class="index-text text-center">Get to know our Essentials collection</h2>
   <hr />
+  {{ user_wishlist }}
   <div class="row">
     {% for product in products %}
     <div class="container-fluid col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -87,7 +88,11 @@
                           data-item_id="{{ product.id }}"
                           id="{{ product.id }}"
                         >
+                          {% if product in user_wishlist %}
+                          <i class="fas fa-heart fa-lg"></i>
+                          {% else %}
                           <i class="far fa-heart fa-lg"></i>
+                          {% endif %}
                         </button>
                       </div>
                       <input
