@@ -52,18 +52,15 @@
         <a href="{% url 'product_detail' product.id %}">
           <img
             class="card-img-top"
-            src="{{ product.image_url }}"
-            alt="{{ product.name }}"
-          />
+            src="{{ product.image.url }}"
+            alt="{{ product.name }}"/>
         </a>
         <div class="card-body pb-0">
           <h5 class="card-title">{{ product.name }}</h5>
           {% if request.user.is_superuser %}
           <small class="ml-3">
             <a href="{% url 'edit_product' product.id %}">Edit</a> |
-            <a class="text-danger" href="{% url 'delete_product' product.id %}"
-              >Delete</a
-            >
+            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
           </small>
           {% endif %}
           <div class="card-text">
