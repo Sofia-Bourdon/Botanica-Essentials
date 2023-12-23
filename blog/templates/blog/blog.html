@@ -21,13 +21,16 @@
                     By: {{ post.author }} 
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a class="text-danger" href="{% url 'delete_post' post.id %}">Delete</a>
+                        <a class="text-danger float-right" href="{% url 'delete_post' post.id %}">Delete</a>
                     </small>
                     {% endif %}
                 </div>
                 <div class="card-body">
+                    <h3>{{ post.title }}</h3>
+                    {% if post.image %}
+                    <img class="figure-img img-fluid rounded my-3" src="{{ post.image.url }}" alt="{{ post.title }}">
+                    {% endif %}
                     <div class="card-title">
-                        <h5>{{ post.title }}</h5>
                         <card-text>
                             <p>{{ post.body }}</p>
                         </card-text>
