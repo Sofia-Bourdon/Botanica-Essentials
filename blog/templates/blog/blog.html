@@ -34,7 +34,8 @@
                     {% endif %}
                     <div class="card-title">
                         <card-text>
-                            <p>{{ post.body }}</p>
+                            <p>{{post.body|safe|truncatechars:200}}</p>
+                            Read More
                         </card-text>
                     </div>
                 </div>

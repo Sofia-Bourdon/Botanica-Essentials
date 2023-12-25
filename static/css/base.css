@@ -390,6 +390,13 @@ input[name='q']::placeholder {
     /* text-info */
 }
 
+.line-clamp-5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
