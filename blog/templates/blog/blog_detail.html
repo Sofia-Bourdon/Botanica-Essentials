@@ -4,21 +4,11 @@
 
 {% block content %}
 
-<div class="overlay"></div>
-<div class="container my-3">
-    <div class="row mt-1">
-        <div class="col">
-            <h2 class="text-center">Check-out our latest posts!</h2>
-            <hr>
-        </div>
-    </div>
-    
     <div class="row">
-        {% for post in posts %}
         <div class="col-sm-6">
             <div class="card m-2" style="border: 1px solid gray;">
                 <div class="card-header bg-transparent">
-                    By: {{ post.author }} 
+                    By: {{ post.author }}
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a class="text-danger float-right" href="{% url 'delete_blog' post.id %}">Delete</a>
@@ -28,22 +18,19 @@
                 <div class="card-body">
                     <h3>{{ post.title }}</h3>
                     {% if post.image %}
-                    <img class="figure-img img-fluid rounded my-3" src="{{ post.image.url }}" alt="{{ post.title }}" 
-                    style="max-width:40%;
+                    <img class="figure-img img-fluid rounded my-3" src="{{ post.image.url }}" alt="{{ post.title }}"
+                        style="max-width:40%;
                     float: left;">
                     {% endif %}
                     <div class="card-title">
                         <card-text>
                             <p>{{post.body|safe|truncatechars:200}}</p>
-                            <a href="{% url 'blog_detail' post.id %}">
-                                <em>Read More</em>
-                            </a>
+                            <em>Read More</em>
                         </card-text>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 

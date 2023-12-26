@@ -9,6 +9,19 @@ class BlogList(ListView):
     template_name = 'blog/blog.html' 
     context_object_name = 'posts'
 
+
+def blog_detail(request, post_id):
+    """ A view to show individual product details """
+
+    post = get_object_or_404(Post, pk=post_id)
+
+    context = {
+        'post': post,
+    }
+
+    return render(request, 'blog/blog_detail.html', context)
+
+
 @login_required
 def delete_blog(request, post_id):
     """ Delete a blog from the store """
@@ -19,3 +32,4 @@ def delete_blog(request, post_id):
     post.delete()
     messages.success(request, 'Post deleted sucessfully!')
     return redirect(reverse('blog'))
+
