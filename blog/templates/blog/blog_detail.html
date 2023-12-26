@@ -4,32 +4,29 @@
 
 {% block content %}
 
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card m-2" style="border: 1px solid gray;">
-                <div class="card-header bg-transparent">
-                    By: {{ post.author }}
-                    {% if request.user.is_superuser %}
-                    <small class="ml-3">
-                        <a class="text-danger float-right" href="{% url 'delete_blog' post.id %}">Delete</a>
-                    </small>
-                    {% endif %}
-                </div>
-                <div class="card-body">
-                    <h3>{{ post.title }}</h3>
-                    {% if post.image %}
-                    <img class="figure-img img-fluid rounded my-3" src="{{ post.image.url }}" alt="{{ post.title }}"
-                        style="max-width:40%;
-                    float: left;">
-                    {% endif %}
-                    <div class="card-title">
-                        <card-text>
-                            <p>{{post.body|safe|truncatechars:200}}</p>
-                            <em>Read More</em>
-                        </card-text>
-                    </div>
+    <div class="container">
+        <div class="m-2">
+            <div class="bg-transparent">
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a class="text-danger float-right" href="{% url 'delete_blog' post.id %}">Delete</a>
+                </small>
+                {% endif %}
+            </div>
+            <div class="">
+                <h2 class="text-center font-weight-bold">{{ post.title }}</h2>
+                {% if post.image %}
+                <img class="figure-img img-fluid rounded my-3" src="{{ post.image.url }}" alt="{{ post.title }}"
+                    style="max-width:40%;
+                float: left;">
+                {% endif %}
+                <div class="m-3 text-justify">
+                    <card-text>
+                        <p>{{ post.body }}</p>
+                    </card-text>
                 </div>
             </div>
+            <footer class="blockquote-footer"><cite title="Source Title">By: {{ post.author }}</cite></footer>
         </div>
     </div>
 </div>
