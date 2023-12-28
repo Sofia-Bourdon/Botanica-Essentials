@@ -1,12 +1,148 @@
-# Botanica Essentials
+## Discover Nature's Best for Your Skin 
 
-## Discover Nature's Best for Your Skin
 
----------------
+<img width="1512" alt="website-mockup" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/f88c3942-e578-45b2-99ca-0173efd63ecf">
 
-Botanica Essentials is your go-to online destination for premium skincare products. We're dedicated to providing you with a seamless e-Commerce experience, making it easy to find and purchase top-notch skincare solutions. Every item on our platform is carefully selected, ensuring you get the best of what nature has to offer. For retail customers seeking quality and reliability, look no further. Dive in, explore our range, and treat your skin to the best.
+--------------- 
 
------
+  
+
+Botanica Essentials is your go-to online destination for premium skincare products. We're dedicated to providing you with a seamless e-Commerce experience, making it easy to find and purchase top-notch skincare solutions. Every item on our platform is carefully selected, ensuring you get the best of what nature has to offer. For retail customers seeking quality and reliability, look no further. Dive in, explore our range, and treat your skin to the best. 
+
+
+
+----- 
+
+ ## Table of Contents 
+
+* [Introduction](#introduction) 
+
+  * [Purpose](#purpose) 
+
+* [Strategy](#strategy) 
+
+  * [Target Audience](#target-audience) 
+
+  * [Project Management](#project-management) 
+
+* [Structure Plane](#structure-plane)
+
+  * [Product Planning](#product-Planning)
+
+  * [User Stories](#user-stories) 
+
+  * [Database Schema](#database-schema) 
+
+* [UX Planning](#ux-planning) 
+
+  * [Wireframes](#wireframes) 
+
+* [Features](#features) 
+
+  * [Navigation](#navigation) 
+
+  * [Product Sorting and Filtering](#product-sorting-and-filtering:) 
+
+  * [User Registration](#user-registration) 
+
+  * [Wishlist](#wishlist) 
+
+  * [Shopping bag](#shopping-bag) 
+
+  * [Checkout](#checkout) 
+
+  * [Blog](#blog) 
+
+  * [Customer support](#customer-support) 
+
+  * [Store management](#store-management) 
+
+  * [Marketing](#marketing) 
+
+  * [General Information](#general-information) 
+
+  * [Search Engine optimisation](#search-engine-optimisation) 
+
+  * [Future Enhancements](#future-enhancements) 
+
+* [Testing and Deployment](#testing-and-deployment) 
+
+  * [Manual Testing](#manual-testing) 
+
+  * [Validation](#validation) 
+
+  * [Deploying with Heroku](#deploying-with-heroku) 
+
+* [Technologies](#technologies) 
+
+* [Credits](#credits) 
+
+  * [Sources](#sources) 
+
+
+
+## Introduction
+
+**Purpose**
+
+
+## Strategy
+
+**Target Audience**
+
+- Botanica Essentials is a skincare and well-being e-commerce site that was inspired by trendy companies' web pages such as glossier.com and milkmakeup.com
+The website is designed to cater primarily to the specific needs and concerns of young adults (ages 18-30) who either follow trends on social media (TikTok, Youtube, etc.) or are interested in improving or managing the health of their skin. Although, it could also appeal an audience of all ages that is interested in natural beauty or self-care products and advise.
+
+
+**Project management with Github Projects:**
+
+- Project planning and management was vital for the development of the application.
+
+- At Github projects, the user stoires were transformed into issues, assigned into Milestones to later be organized into boards and displayed as "backlog", "In progress" and "Under review" and "Done".
+
+<img width="1512" alt="github_p1" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/1fd0e615-16ba-4f49-bc38-625e6a837531">
+
+<img width="1512" alt="github_p2" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/44b104b9-9133-4eb3-8566-b002cce99307">
+
+
+## Structure Plane
+
+**Product Planning**
+
+- When planning each of the products present on the website, a word document was created where each product with their respective images, description and sku was put together into a cards and then categorized into "Moisturizers", "Toners" and "Cleansers"
+
+<img width="640" alt="product_planning" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/8621bff1-8ed3-49e0-a0b2-813bc9961248">
+
+**User Stories**
+
+- For each of the features present, user stories were created and managed throught both a specialized excel sheet and as issues using github projects feature.
+
+<img width="1512" alt="user_stories_excel" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/757ebe56-90ae-4fd9-af18-9076f7713c38">
+
+**Database Schema**
+
+
+## UX Planning
+**Design and Wireframes:**
+
+- When planning the application, the main design was created a balsamiq cloud template, where many of the website page's layout were put together before development. Bellow, you will find the original designs for the application:
+
+<img width="1512" alt="home_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/0bab67de-b75a-4aa0-8b13-24f94cf9bbe7">
+
+<img width="1512" alt="all_products_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/dd301491-f47f-466d-a642-6a61ffcafe04">
+
+<img width="1512" alt="all_products_balsamiq" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/d811aef5-8261-45e2-87dd-147ae424e835">
+
+<img width="1512" alt="product_detail_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/cdf29b4f-c737-4207-a426-efbb7d9a6d9c">
+
+<img width="1512" alt="shopping_bag_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/7e2d0bf7-6f1b-43bc-ae6f-4452eee589c9">
+
+<img width="1512" alt="login_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/63f7a1cd-8fa3-48ee-853d-17322196ad38">
+
+ <img width="1512" alt="our_philosophy_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/d9eb3c2f-8e5a-44ab-b4b2-dc9073053b24">
+
+- While most of original designed made through the development and deployment proccess, some designs changed throught development and some were not implemented due to time constraints.
+
 
 ## Features
 
@@ -22,7 +158,7 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 - On the top right side of the navbar a utility section is located where the user can find symbolic icons (e.g. A bag for shopping bag) containing useful links.
 
 
-**Product sorting and filtering:**
+**Product Sorting and Filtering:**
 
 - Users can sort and filter products to access specific categories and further refine results based on predetermined criteria.
 
@@ -37,7 +173,7 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 - Users can also access "Best Sellers", with products chosen by Botanica Essentials' staff based on perceived popularity.
 
 
-**User registration feature:**
+**User Registration feature:**
 
 <img width="1512" alt="login_page" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/2ba4d82a-41b9-4061-9996-824d42d60247">
 
@@ -68,7 +204,7 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 - A "hearted" product can also be removed by going to the wishlist page and clicking on "remove"
 
 
-**Shopping bag**
+**Shopping Bag**
 
 <img width="1512" alt="shopping_bag2" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/df330561-5cbe-4d00-bb7b-b01f6fc6eda5">
 
@@ -98,16 +234,11 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 
 - After completing the order successfuly they should be redirected to a success page displaying the order details and a button with a link to the homepage or profile (depending on if they are signed in)
 
-**Marketing**
-
-<img width="1512" alt="faq_page" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/5751f6a1-12c7-4cc5-b437-56a30dee31e8">
-
-- On each page of Botanica Essential's website, the user has the possibility to subscribe to a Newsletter by going to the footer and entering the email adress in the dedicated text zone before entering the "Subscribe" button. Once the action is completed, a success message is displayed.
-  
-- Our facebook page can be found here: https://www.facebook.com/profile.php?id=61552639373618
+**Dedicated Blog**
+- hgiu
 
 
-**Customer support**
+**Customer Support**
 
 - On the footer of the website, the user can find the "Contact us" link where they will be redirected to the contact page for user inquiries.
 
@@ -116,7 +247,7 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 - On the page, they can enter personal information such as the Name, Email adress, Phone Number, followed by the subject of the request and the message. Once the "submit" button is clicked, a success message is displayed informing the user that the query was successfully sent to Botanica Essentials. At the same time, a ticket is opened in the admin panel, whose status can be tracked by the staff members.
 
 
-**Store management**
+**Store Management**
 
 - To access any of the store management features, the user has to be registered as a *superuser* and be logged in. A superuser can log in through the standart login link provided on the navbar or at /admin.
 
@@ -127,10 +258,19 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 
 <img width="1512" alt="admin_panel_2" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/310bc198-307f-4eae-8f6b-d5e404c0f892">
 
-  
 - Inside each of this panels a filtering feature was implented to help the superuser organize and manage the information.
 
-**General information**
+
+**Marketing**
+
+<img width="1512" alt="faq_page" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/5751f6a1-12c7-4cc5-b437-56a30dee31e8">
+
+- On each page of Botanica Essential's website, the user has the possibility to subscribe to a Newsletter by going to the footer and entering the email adress in the dedicated text zone before entering the "Subscribe" button. Once the action is completed, a success message is displayed.
+  
+- Our facebook page can be found here: https://www.facebook.com/profile.php?id=61552639373618
+
+
+**General Information**
 
 - The page dedicated for FAQ ("Frequently Asked Questions") integrates a series of relevant questions, as well as their respective answers that can be displayed or hidden by clicking a dedicated "+" or "-" box. By clicking on the "View More" button, additional questions that were originally hidden will be displayed, or click "View Less" to return to the original state.
 
@@ -144,7 +284,7 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 <img width="1512" alt="our_philosophy_2" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/45d56b62-cbd6-4cc7-9c12-12a5693babb4">
 
 
-## Search engine optimisation
+**Search Engine Optimisation**
 
 - Additional meta description tags wih description and keywords were added for SEO purposes.
   
@@ -154,47 +294,8 @@ Botanica Essentials is your go-to online destination for premium skincare produc
   
 - keywords throughout the website were wrapped inside strong tags for emphasis.
 
-## Design and wireframes:
 
-- When planning the application, the main design was created a balsamiq cloud template, where many of the website page's layout were put together before development. Bellow, you will find the original designs for the application:
-
-<img width="1512" alt="home_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/0bab67de-b75a-4aa0-8b13-24f94cf9bbe7">
-
-<img width="1512" alt="all_products_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/dd301491-f47f-466d-a642-6a61ffcafe04">
-
-<img width="1512" alt="all_products_balsamiq" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/d811aef5-8261-45e2-87dd-147ae424e835">
-
-<img width="1512" alt="product_detail_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/cdf29b4f-c737-4207-a426-efbb7d9a6d9c">
-
-<img width="1512" alt="shopping_bag_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/7e2d0bf7-6f1b-43bc-ae6f-4452eee589c9">
-
-<img width="1512" alt="login_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/63f7a1cd-8fa3-48ee-853d-17322196ad38">
-
- <img width="1512" alt="our_philosophy_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/d9eb3c2f-8e5a-44ab-b4b2-dc9073053b24">
-
-- While most of original designed made through the development and deployment proccess, some designs changed throught development and some were not implemented due to time constraints.
-
-
-<img width="640" alt="product_planning" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/8621bff1-8ed3-49e0-a0b2-813bc9961248">
-
-- When planning each of the products present on the website, a word document was created where each product with their respective images, description and sku was put together into a cards and then categorized into "Moisturizers", "Toners" and "Cleansers"
-
-
-## Project management with Github Projects:
-
-- Project planning and management was vital for the development of the application.
-- For each of the features present, user stories were created and managed throught both a specialized excel sheet and as issues using github projects feature.
-
-<img width="1512" alt="user_stories_excel" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/757ebe56-90ae-4fd9-af18-9076f7713c38">
-
-- At Github projects, the user stoires were transformed into issues, assigned into Milestones to later be organized into boards and displayed as "backlog", "In progress" and "Under review" and "Done".
-
-<img width="1512" alt="github_p1" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/1fd0e615-16ba-4f49-bc38-625e6a837531">
-
-<img width="1512" alt="github_p2" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/44b104b9-9133-4eb3-8566-b002cce99307">
-
-
-## Future Features might include:
+**Future Enhancements**
 
 - Aside from fixing existing bugs, additional features could be implemented in the future to enhance user experience.
 
@@ -205,22 +306,19 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 - In the user profile, a new section for keeping track of old payment information or delivery/billing addresses could be added, which would allow the user to keep track and edit old or new personal information added.
 
 
-## Bugs and adversities:
+## Testing and Deployment
 
-- During the deployment proccess a few bugs were encountered and some not fixed due to time constrains and errors commited during development.
+**Manual testing**
 
-- A bug when accessing the Profile where a 500 error is being displayed can be found on the deployed heroku version but not when running the website locally.
-  
-- On the deployed version, The homepage image is not being displayed and the path could not be fixed despite several attemps.
-  
-- When completing a purchase, a current issue present in the code prevents the order confirmartion email from being sent. Unfortunately, this issue was not solved in time before deployment.
+**Validating the code**
 
-## Target audience
+**Deploying with Heroku**
 
-- Botanica Essentials is a skincare and well-being e-commerce site that was inspired by trendy companies' web pages such as glossier.com and milkmakeup.com
-The website is designed to cater primarily to the specific needs and concerns of young adults (ages 18-30) who either follow trends on social media (TikTok, Youtube, etc.) or are interested in improving or managing the health of their skin. Although, it could also appeal an audience of all ages that is interested in natural beauty or self-care products and advise.
+## Technologies
 
-## Sources:
+## Credits
+
+**Sources:**
 
 - The following sources were consulted when developping the application:
 
