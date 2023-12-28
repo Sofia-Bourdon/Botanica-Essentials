@@ -151,9 +151,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-.mc-embedded-subscribe {
-    display: inline-block;
-}
+#mc-embedded-subscribe {
+    clear: both;
+    width: auto;
+    display: block;
+    margin: 0.5em 0 0.5em 3%;
 
 .overlay {
     height: 100%;
