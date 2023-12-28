@@ -43,7 +43,7 @@ DEBUG = os.environ.get('DEBUG')
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ALLOWED_HOSTS = [
-    '8000-sofia-bourdon-botanica-e-ttkdwc7cn9.us2.codeanyapp.com',
+    '8004-sofia-bourdon-botanica-e-ttkdwc7cn9.us2.codeanyapp.com',
     'botanica-essentials-5703813598b8.herokuapp.com', 'localhost',
 ]
 
@@ -123,7 +123,10 @@ TEMPLATES = [
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
-            ]
+            ],
+            'libraries': {
+                'wishlist_tags': 'wishlist.templatetags.wishlist_tags',
+            },
         },
     },
 ]
