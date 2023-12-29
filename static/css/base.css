@@ -156,6 +156,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto;
     display: block;
     margin: 0.5em 0 0.5em 3%;
+}
 
 .overlay {
     height: 100%;
@@ -328,7 +329,6 @@ body {
 
 #mc_embed_signup {
     background: #fff;
-    false;
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
     width: 600px;
@@ -398,6 +398,14 @@ input[name='q']::placeholder {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.flex-justify-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
