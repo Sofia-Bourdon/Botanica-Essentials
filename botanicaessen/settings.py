@@ -43,7 +43,9 @@ DEBUG = os.environ.get('DEBUG')
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ALLOWED_HOSTS = [
-    '8004-sofia-bourdon-botanica-e-ttkdwc7cn9.us2.codeanyapp.com',
+    '8000-sofia-bourdon-botanica-e-ttkdwc7cn9.us2.codeanyapp.com',
+    '8002-sofia-bourdon-botanica-e-ttkdwc7cn9.us2.codeanyapp.com',
+    '8002-sofia-bourdon-botanica-e-ttkdwc7cn9.us2.codeanyapp.com',
     'botanica-essentials-5703813598b8.herokuapp.com', 'localhost',
 ]
 
@@ -227,3 +229,5 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+print("Stripe Webhook Secret:", STRIPE_WH_SECRET)
