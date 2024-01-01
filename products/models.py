@@ -26,7 +26,6 @@ class Category(models.Model):
         return self.friendly_name
 
 
-
 class Product(models.Model):
     categories = models.ManyToManyField(Category, related_name="products")
     name = models.CharField(max_length=255)
