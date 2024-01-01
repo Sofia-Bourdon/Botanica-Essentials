@@ -104,7 +104,7 @@ def checkout(request):
                         order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(
-                        request, ("One of the products in your bag wasn't found"
+                        request, ("One of the products in your bag wasn't found" # noqa
                                   "Please call us for assistance!"))
                     order.delete()
                     return redirect(reverse('view_bag'))
@@ -158,7 +158,7 @@ def checkout(request):
 
     order_form = OrderForm(initial=initial_data)
     order_form = OrderForm(initial=initial_data)
-    client_secret_cond = intent.client_secret if not request.method == "POST" else None
+    client_secret_cond = intent.client_secret if not request.method == "POST" else None # noqa
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
