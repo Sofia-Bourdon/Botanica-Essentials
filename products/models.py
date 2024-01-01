@@ -24,6 +24,9 @@ class Category(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
+    class Meta:
+        app_label = 'products'
+
 
 class Product(models.Model):
     categories = models.ManyToManyField(Category, related_name="products")
