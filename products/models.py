@@ -36,6 +36,9 @@ class Product(models.Model):
     sku = models.CharField(max_length=255, unique=True)
     image = cloudinary.models.CloudinaryField('image', null=True, blank=True)
 
+    class Meta:
+        app_label = 'products'
+
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super().save(*args, **kwargs)
