@@ -50,6 +50,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'botanicaessen.apps.botanicaessenConfig',
+    'checkout.apps.checkoutConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,7 +71,6 @@ INSTALLED_APPS = [
     'wishlist',
     'user',
     'checkout',
-    'checkout.apps.checkoutConfig',
     'blog',
     'crispy_forms',
 ]
