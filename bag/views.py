@@ -18,15 +18,16 @@ def add_to_bag(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
-    if item_id in list(bag.keys()):
+    if quantity <= 0:
+        messages.error(request, "Invalid quantity! Please enter a number greater than 0.")
+        return redirect(redirect_url)
+
+    if item_id in bag:
         bag[item_id] += quantity
-        messages.success(
-            request, f'Updated {product.name} quantity to {bag[item_id]}')
+        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
-        messages.success(
-            request,
-            f'Added {product.name} to your bag successfuly')
+        messages.success(request, f'Added {product.name} to your bag successfully')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -38,7 +39,7 @@ def adjust_bag(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
-
+    
     if quantity > 0:
         bag[item_id] = quantity
         messages.success(
