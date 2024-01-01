@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 
 from products.models import Product
@@ -15,19 +15,26 @@ def add_to_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
+    # Define redirect_url at the start
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
     if quantity <= 0:
-        messages.error(request, "Invalid quantity! Please enter a number greater than 0.")
-        return redirect(redirect_url)
+        messages.error(
+            request,
+            "Invalid quantity! Please enter a number greater than 0.")
+        return redirect(redirect_url)  # redirect_url is now always defined
 
     if item_id in bag:
         bag[item_id] += quantity
-        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+        messages.success(
+            request,
+            f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your bag successfully')
+        messages.success(
+            request,
+            f'Added {product.name} to your bag successfully')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -39,7 +46,7 @@ def adjust_bag(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
-    
+
     if quantity > 0:
         bag[item_id] = quantity
         messages.success(

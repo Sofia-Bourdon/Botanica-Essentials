@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+    )
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -56,7 +58,8 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(
             request,
-            'Stripe public key is missing. Did you forget to set it in your environment?')
+            'Stripe public key is missing. \
+            Did you forget to set it in your environment?')
 
     if request.method == "POST":
         bag = request.session.get('bag', {})
@@ -101,7 +104,7 @@ def checkout(request):
                         order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(
-                        request, ("One of the products in your bag wasn't found in our database. "
+                        request, ("One of the products in your bag wasn't found"
                                   "Please call us for assistance!"))
                     order.delete()
                     return redirect(reverse('view_bag'))
@@ -115,7 +118,8 @@ def checkout(request):
         else:
             messages.error(
                 request,
-                "There was an error with your form. Please double check your information.")
+                "There was an error with your form. \
+                Please double check your information.")
     else:
         bag = request.session.get('bag', {})
         if not bag:
@@ -152,14 +156,14 @@ def checkout(request):
         else:
             initial_data = {}
 
-        order_form = OrderForm(initial=initial_data)
-
+    order_form = OrderForm(initial=initial_data)
+    order_form = OrderForm(initial=initial_data)
+    client_secret_cond = intent.client_secret if not request.method == "POST" else None
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret if not request.method == "POST" else None,
+        'client_secret': client_secret_cond
     }
-
     return render(request, 'checkout/checkout.html', context)
 
 

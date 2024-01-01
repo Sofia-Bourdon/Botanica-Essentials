@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
 import cloudinary
-from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
