@@ -1,8 +1,8 @@
-from django.apps import AppConfig # noqa
+from django.apps import AppConfig
 
 
 class CheckoutConfig(AppConfig):
     name = 'checkout'
 
     def ready(self):
-        import checkout.signals # noqa
+        import checkout.signals
