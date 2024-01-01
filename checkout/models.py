@@ -2,12 +2,13 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
-from django.contrib.auth.models import User
 
 from django_countries.fields import CountryField
 
 from products.models import Product
 from user.models import UserProfile
+
+User = get_user_model()
 
 
 class UserPurchase(models.Model):
