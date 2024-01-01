@@ -8,6 +8,7 @@ import cloudinary
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
+        app_label = 'products'
 
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
@@ -24,8 +25,6 @@ class Category(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
-    class Meta:
-        app_label = 'products'
 
 
 class Product(models.Model):
