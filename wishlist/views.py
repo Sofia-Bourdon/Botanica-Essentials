@@ -12,7 +12,9 @@ def view_wishlist(request):
     """ A view that renders the wishlist page """
 
     if not request.user.is_authenticated:
-        messages.info(request, 'You need to be logged in to view your wishlist.')
+        messages.info(
+            request,
+            'You need to be logged in to view your wishlist.')
         return redirect(reverse('account_login'))
 
     user_profile = request.user.userprofile
@@ -24,13 +26,14 @@ def view_wishlist(request):
     return render(request, 'wishlist/wishlist.html', context)
 
 
-
 @login_required
 def add_to_wishlist(request, item_id):
     """ Add a product to the wishlist """
 
     if not request.user.is_authenticated:
-        messages.info(request, 'You need to be logged in to add items to your wishlist.')
+        messages.info(
+            request,
+            'You need to be logged in to add items to your wishlist.')
         return redirect(reverse('account_login'))
 
     product = get_object_or_404(Product, pk=item_id)
@@ -48,7 +51,9 @@ def add_to_wishlist(request, item_id):
 
 def remove_from_wishlist(request, item_id):
     if not request.user.is_authenticated:
-        messages.info(request, 'You need to be logged in to remove items from your wishlist.')
+        messages.info(
+            request,
+            'You need to be logged in to remove items from your wishlist.')
         return redirect(reverse('account_login'))
 
     product = get_object_or_404(Product, pk=item_id)
@@ -57,8 +62,12 @@ def remove_from_wishlist(request, item_id):
 
     if wishlist_item.exists():
         wishlist_item.delete()
-        messages.success(request, f'Removed {product.name} from your wishlist!')
+        messages.success(
+            request,
+            f'Removed {product.name} from your wishlist!')
     else:
-        messages.error(request, f'Error removing {product.name} from your wishlist')
+        messages.error(
+            request,
+            f'Error removing {product.name} from your wishlist')
 
     return redirect(reverse('view_wishlist'))

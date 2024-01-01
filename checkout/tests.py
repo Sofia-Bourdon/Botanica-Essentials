@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .models import Order, OrderLineItem, UserPurchase
 
+
 class OrderModelTest(TestCase):
 
     def test_order_creation(self):

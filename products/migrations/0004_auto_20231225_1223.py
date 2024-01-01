@@ -17,6 +17,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='categories',
-            field=models.ManyToManyField(related_name='products', to='products.Category'),
+            field=models.ManyToManyField(
+                related_name='products',
+                to='products.Category'),
         ),
     ]

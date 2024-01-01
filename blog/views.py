@@ -4,10 +4,11 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
 from .models import Post
 
+
 class BlogList(ListView):
     """ A view to show a list of all the blog posts"""
     model = Post
-    template_name = 'blog/blog.html' 
+    template_name = 'blog/blog.html'
     context_object_name = 'posts'
 
 
@@ -33,4 +34,3 @@ def delete_blog(request, post_id):
     post.delete()
     messages.success(request, 'Post deleted sucessfully!')
     return redirect(reverse('blog'))
-

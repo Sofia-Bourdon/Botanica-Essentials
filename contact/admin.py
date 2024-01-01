@@ -21,7 +21,7 @@ def status_open(modeladmin, request, queryset):
 
 @admin.action(description="Set the status as In Progress")
 def status_in_progress(modeladmin, request, queryset):
-    updated = queryset.update(status="IN_PROGRESS")  # You also missed defining `updated`
+    updated = queryset.update(status="IN_PROGRESS")
     modeladmin.message_user(
         request,
         ngettext(
@@ -51,8 +51,20 @@ def status_closed(modeladmin, request, queryset):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'phone_number', 'subject', 'timestamp', 'status']
-    list_filter = ['status', 'timestamp', 'name', 'email', 'subject', 'phone_number']
+    list_display = [
+        'name',
+        'email',
+        'phone_number',
+        'subject',
+        'timestamp',
+        'status']
+    list_filter = [
+        'status',
+        'timestamp',
+        'name',
+        'email',
+        'subject',
+        'phone_number']
     actions = [status_open, status_in_progress, status_closed]
     search_fields = ['name', 'email', 'phone_number',
                      'subject', 'timestamp', 'status']

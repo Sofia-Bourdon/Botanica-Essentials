@@ -14,4 +14,3 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request, 'contact/contact_us.html', {'form': form})
-

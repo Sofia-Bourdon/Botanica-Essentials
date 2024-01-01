@@ -24,7 +24,9 @@ def add_to_bag(request, item_id):
             request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your bag successfuly')
+        messages.success(
+            request,
+            f'Added {product.name} to your bag successfuly')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -54,7 +56,7 @@ def delete_from_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     bag = request.session.get('bag', {})
-    
+
     if item_id in bag:
         del bag[item_id]
         request.session['bag'] = bag

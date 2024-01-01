@@ -9,7 +9,7 @@ from cloudinary.models import CloudinaryField
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
-    
+
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
