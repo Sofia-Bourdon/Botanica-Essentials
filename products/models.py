@@ -9,7 +9,6 @@ from cloudinary.models import CloudinaryField # noqa
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
-        app_label = 'products'
 
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
@@ -35,9 +34,6 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     sku = models.CharField(max_length=255, unique=True)
     image = cloudinary.models.CloudinaryField('image', null=True, blank=True)
-
-    class Meta:
-        app_label = 'products'
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
