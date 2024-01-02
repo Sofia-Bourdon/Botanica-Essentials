@@ -32,3 +32,4 @@ jobs:
         python manage.py test
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        DJANGO_SETTINGS_MODULE: botanicaessen.settings
