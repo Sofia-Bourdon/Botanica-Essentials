@@ -16,7 +16,8 @@ import cloudinary
 import cloudinary.api
 import cloudinary.uploader
 import dj_database_url
-import env # noqa
+if os.path.exists("env.py"):
+    import env
 
 
 cloudinary.config(
