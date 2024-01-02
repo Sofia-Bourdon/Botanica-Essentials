@@ -51,7 +51,7 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 
   * [Checkout](#checkout) 
 
-  * [Blog](#blog) 
+  * [Dedicated Blog](#dedicated-blog) 
 
   * [Customer support](#customer-support) 
 
@@ -84,6 +84,18 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 ## Introduction
 
 **Purpose**
+
+***Botanica Essentials: Simplifying Natural Skincare***
+
+- What We Do: We offer a curated online selection of top-quality natural skincare products. Our website is designed to be simple, informative, and easy to navigate, ensuring a great shopping experience.
+
+- Our Vision: To be the preferred online destination for anyone looking for effective, natural, and environmentally friendly skincare solutions.
+
+- For Whom: While we focus on young adults keen on skincare trends, our doors are open to anyone who values natural skincare.
+
+- Our Promise: Every product on Botanica Essentials is chosen for its natural ingredients, quality, and eco-friendliness. We're more than a store – we're a resource and a community for natural skincare enthusiasts.
+
+- Looking Ahead: We plan to expand our product range, incorporate technology for personalized recommendations, and strengthen our commitment to sustainability.
 
 
 ## Strategy
@@ -234,8 +246,23 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 - After completing the order successfuly they should be redirected to a success page displaying the order details and a button with a link to the homepage or profile (depending on if they are signed in)
 
+
 **Dedicated Blog**
-- hgiu
+
+- To explore our curated collection of skincare insights, users can access the Blog via the "Blog" button located on the right side of the main navigation menu or by directly navigating to /blog.
+
+<img width="1512" alt="blog_access" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/blog_access_img">
+
+- The Blog page showcases a variety of posts in an attractive card format. Each card offers a sneak peek of the blog content, including an image and a brief summary, to give readers an idea of what the post covers.
+<img width="1512" alt="blog_overview" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/blog_overview_img">
+
+- For a deeper dive, users can click the "Read More" button on any blog card. This action redirects them to the full blog post, where they can enjoy the complete article in detail.
+<img width="1512" alt="blog_read_more" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/blog_read_more_img">
+
+- Each blog post's detail page is designed for an engaging and informative reading experience, allowing users to immerse themselves in the world of natural skincare and wellness.
+<img width="1512" alt="blog_detail_page" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/blog_detail_page_img">
+
+- Regularly updated with fresh content, the Blog is a key resource for anyone interested in skincare trends, tips, and in-depth product knowledge.
 
 
 **Customer Support**
@@ -308,13 +335,59 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 ## Testing and Deployment
 
-**Manual testing**
-
-**Validating the code**
+- Botanica Essentials was rigorously tested through both manual and automated methods to ensure a smooth and reliable experience. Each feature of the website was checked for functionality and responsiveness on various devices. Automated testing was also implemented for technical accuracy. For more information about the testing process, please refer to the TESTING.md file.
 
 **Deploying with Heroku**
 
+- Heroku App Creation: A new app was created on Heroku, with a unique name suitable for the project.
+
+- Automatic Deployment from GitHub: The Heroku app was linked to the Botanica Essentials GitHub repository. Automatic deployment was set up, so that any commits pushed to the master branch of the GitHub repo would automatically deploy a new version of the app on Heroku.
+
+- Configuring Environment Variables: In the Heroku app settings, environment variables were configured. Specifically, DEBUG was set to False to ensure security and optimal performance in the production environment.
+
+- Database Setup with ElephantSQL: ElephantSQL was utilized for database management. This involved configuring the DATABASE_URL in the Heroku app settings to point to the ElephantSQL database instance.
+
+- Static and Media Files Handling: Django was configured to manage static and media files effectively, especially for the production environment on Heroku. To resolve any static file deployment issues and ensure smooth delivery of these files, Whitenoise was integrated into the project.
+
+- Finalizing Deployment: After the configurations were set, the project was ready for automatic deployment. Any new changes pushed to the GitHub repository would automatically reflect on the live site hosted on Heroku.
+
 ## Technologies
+
+**Development Languages and Frameworks**
+
+- HTML5: Structure for the website's content.
+
+- CSS3: Styling of the website.
+
+- JavaScript: Interactive elements on the website.
+
+- Bootstrap 4: Framework for responsive design.
+
+- Python 3.9: Backend programming language.
+
+- Django 3.2: High-level web framework for rapid development.
+
+- Django allauth: For handling user registration, authentication, and account management.
+
+- dj-database-url: For parsing the database URL to configure database connections.
+
+- django-crispy-forms: For managing and customizing forms, enhancing their appearance and usability.
+
+- Pillow: A Python Imaging Library (PIL) fork, providing extensive file format support and image processing capabilities.
+
+- whitenoise: For serving the app's own static files, simplifying deployment.
+
+- flake8: For validating code format and ensuring adherence to coding standards.
+
+**Additional Tools and Technologies**
+
+- Favicon Generator: To create the website's favicon.
+- Balsamiq Cloud: For generating wireframes during the design phase.
+- Google Fonts: For importing a variety of fonts.
+- Google Chrome Lighthouse: For testing the website's performance, accessibility, and SEO.
+- Google Chrome Developer Tools: Essential for testing, debugging, and ensuring responsiveness.
+- Cloudinary: Cloud-based service for storing and managing media files.
+- Stripe: Integrated for secure online payment processing.
 
 ## Credits
 
