@@ -4,15 +4,15 @@
 <html lang="en">
   <head>
     {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Botanica Essentials, a natural skincare shop. 
-    Shop our natural, cruelty free, ethically sourced products made from organic botanical ingredients"/>
+    Shop our natural, cruelty free, ethically sourced products made from organic botanical ingredients">
     <meta name="keywords" content="botanica essentials, natural beauty, organic,
      skincare, cruelty free, ethical, ethical beauty, cream, moisturizer, toner, cleanser, mask, aloe, hydrating, soothing, 
-     reduces irritation, skin barrier, complexion, uniform, aloe, avocado mask, seaweed, green tea mask, best sellers, best selling"/>
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+     reduces irritation, skin barrier, complexion, uniform, aloe, avocado mask, seaweed, green tea mask, best sellers, best selling">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
     {% endblock %} 
     
     {% block extra_meta %} 
@@ -21,16 +21,15 @@
     {% block corecss %}
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"/>
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato&family=Noto+Sans+Lao:wght@300;400;500;600&family=Open+Sans:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Roboto&family=Young+Serif&display=swap"
-      rel="stylesheet"/>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+      rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link
       href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
       rel="stylesheet"
-      type="text/css"
-    />
+      type="text/css">
     {% endblock %} 
     
     {% block extra_css %} 
@@ -90,7 +89,7 @@
 
           <!-- Search bar toggle & form -->
           <div class="col-auto p-auto">
-            <input type="checkbox" id="toggleSearch" class="d-none" />
+            <input type="checkbox" id="toggleSearch" class="d-none">
             <label class="icon" for="toggleSearch">
               <i class="fas fa-search fa-lg"></i>
             </label>
@@ -105,7 +104,7 @@
                   type="text"
                   name="q"
                   id="searchInput"
-                  placeholder="Search our site"/>
+                  placeholder="Search our site">
                 <div class="input-group-append">
                   <button
                     class="form-control btn btn-black border border-black rounded-0"
@@ -201,7 +200,7 @@
           </div>
           <div class="col-md-4 mw-100">
             <div id="mc_embed_shell">
-              <div id="mc_embed_signup w-100">
+              <div id="mc_embed_signup" class="w-100">
                 <form
                   action="https://codeanyapp.us21.list-manage.com/subscribe/post?u=32d4e2fad3049d450f8d8679a&amp;id=cd06b2c856&amp;f_id=00f7ebe6f0"
                   method="post"
@@ -215,7 +214,7 @@
                     <div class="mc-field-group">
                         <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
                         </label>
-                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""/>
+                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
                     </div>
                     <div id="mce-responses" class="clear foot">
                         <div class="response" id="mce-error-response" style="display: none">
@@ -236,7 +235,7 @@
                         name="b_32d4e2fad3049d450f8d8679a_cd06b2c856"
                         tabindex="-1"
                         value=""
-                      />
+                      >
                     </div>
                     <div class="optionalParent">
                       <div class="clear foot text-center row">
@@ -253,11 +252,11 @@
                                                                                         display: flex;
                                                                                         padding: 2px 0px;
                                                                                         justify-content: center;
-                                                                                        align-items: center;" /></span></a>
+                                                                                        align-items: center;"></span></a>
                             </p>
                         </div>
                         <div class="col m-1 p-0">
-                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn submit-button button" value="Subscribe" />
+                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn submit-button button" value="Subscribe">
                         </div>
                       </div>
                     </div>
@@ -265,10 +264,9 @@
                 </form>
               </div>
               <script
-                type="text/javascript"
-                src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
-              ></script>
-              <script type="text/javascript">
+                src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
+            </script>
+              <script>
                 (function ($) {
                   window.fnames = new Array();
                   window.ftypes = new Array();
@@ -309,7 +307,7 @@
 
     {% block postloadjs %}
 
-    <script type="text/javascript">
+    <script>
       $(".toast").toast("show");
     </script>
 

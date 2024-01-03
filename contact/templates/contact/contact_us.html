@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% load widget_tweaks %}
-
 {% load static %}
 
 {% block page_header %}
@@ -25,61 +24,35 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form action="{% url 'contact_us' %}" method="post">
+
+            {% if messages %}
+            <div class="alert-section">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} mt-2">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form action="{% url 'contact_us' %}" method="post" class="contact-form">
                 {% csrf_token %}
-                {% if messages %}
-                <div class="container my-4">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                            <div class="alert-section">
-                                {% for message in messages %}
-                                <div class="alert alert-{{ message.tags }} mt-2">
-                                    {{ message }}
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
+
+                {% for field in form %}
+                <div class="form-group mb-3">
+                    <label for="{{ field.id_for_label }}" class="font-monospace font-weight-bold fs-4 form-label">
+                        {{ field.label }}
+                    </label>
+                    {{ field|add_class:"form-control" }}
+                    {% if field.errors %}
+                    <div class="invalid-feedback d-block">
+                        {{ field.errors|first }}
                     </div>
+                    {% endif %}
                 </div>
-                {% endif %}
+                {% endfor %}
 
-                <div class="container my-4">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                            <form method="POST" class="contact-form">
-                                {% csrf_token %}
-
-                                {% for field in form %}
-                                {% if not field.name == "message" %}
-                                <div class="form-group mb-3">
-                                    <label for="{{ field.id_for_label }}" class="font-monospace font-weight-bold fs-4 form-label">{{ field.label }}</label>
-                                    {{ field|add_class:"form-control" }}
-                                    {% if field.errors %}
-                                    <div class="invalid-feedback d-block">
-                                        {{ field.errors|first }}
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                {% endif %}
-                                {% endfor %}
-
-                                <!-- Render the message field -->
-                                <div class="message-card mb-4">
-                                    <div class="message-header">
-                                        <label for="{{ form.message.id_for_label }}" class="fs-4 font-weight-bold form-label">{{ form.message.label }}</label>
-                                    </div>
-                                    <div class="message-content">
-                                        <textarea class="form-control" id="{{ form.message.id_for_label }}"
-                                            name="{{ form.message.name }}" rows="4" placeholder="Write your message here..."></textarea>
-                                    </div>
-                                </div>
-
-                                <button class="btn submit-button btn-lg" type="submit">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
+                <button class="btn submit-button btn-lg" type="submit">Submit</button>
             </form>
         </div>
     </div>
