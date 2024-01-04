@@ -120,7 +120,7 @@ This section outlines the manual tests performed for each user story, including 
 | ID | User Story | Preconditions | Test Steps | Expected Result | Actual Result | Status |
 |----|------------|---------------|------------|-----------------|---------------|--------|
 | 24 | Add a product | Admin is logged into the dashboard. | 1. Navigate to the 'Add Product' section.<br>2. Enter product details and save. | New product is added to the store and is visible on the website. | Pass | Pass 
-| 25 | Edit/Update products | Admin is logged into the dashboard and is on the products page. | 1. Select a product to edit.<br>2. Update the details and save changes. | The product details are updated on the website. | Fail |  Fail
+| 25 | Edit/Update products | Admin is logged into the dashboard and is on the products page. | 1. Select a product to edit.<br>2. Update the details and save changes. | The product details are updated on the website. | Pass |  Pass
 | 26 | Delete a product | Admin is logged into the dashboard and is on the products page. | 1. Select a product and delete it. | The product is removed from the store and is no longer visible on the website. | Pass | Pass 
 | 27 | View lists of products on the admin page | Admin is logged into the dashboard. | 1. Navigate to the 'Products' section. | A list of all products with management options is displayed. | Pass |  Pass
 | 28 | View list of categories for products | Admin is logged into the dashboard. | 1. Navigate to the 'Categories' section. | A list of product categories is displayed with options to manage them. | Pass |  Pass
