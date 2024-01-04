@@ -251,16 +251,16 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 - To explore our curated collection of skincare insights, users can access the Blog via the "Blog" button located on the right side of the main navigation menu or by directly navigating to /blog.
 
-<img width="1512" alt="blog_access" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/blog_access_img">
-
 - The Blog page showcases a variety of posts in an attractive card format. Each card offers a sneak peek of the blog content, including an image and a brief summary, to give readers an idea of what the post covers.
-<img width="1512" alt="blog_overview" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/blog_overview_img">
 
+<img width="1511" alt="blog_page" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/8c9bb1fc-5b7f-4e5b-97ab-145e91e07e68">
+  
 - For a deeper dive, users can click the "Read More" button on any blog card. This action redirects them to the full blog post, where they can enjoy the complete article in detail.
-<img width="1512" alt="blog_read_more" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/blog_read_more_img">
 
 - Each blog post's detail page is designed for an engaging and informative reading experience, allowing users to immerse themselves in the world of natural skincare and wellness.
-<img width="1512" alt="blog_detail_page" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/blog_detail_page_img">
+
+<img width="1512" alt="blog_detail" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/dc8d1b73-a903-4b93-968e-cce68d09966e">
+
 
 - Regularly updated with fresh content, the Blog is a key resource for anyone interested in skincare trends, tips, and in-depth product knowledge.
 
