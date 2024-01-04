@@ -144,9 +144,48 @@
         </div>
     </div>
 </div>
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+<script type="text/javascript">
+    $(".btt-link").click(function (e) {
+        window.scrollTo(0, 0);
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+        $("#sort-selector").change(function (event) {
+            var selector = $(event.currentTarget); // Using event.currentTarget
+            var currentUrl = new URL(window.location);
+            var selectedVal = selector.val();
+            var sort;
+            var direction;
+
+            if (selectedVal !== "reset") { // Use strict inequality
+                sort = selectedVal.split("_")[0];
+                direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        });
+    });
+
+</script>
 
 {% endblock %}

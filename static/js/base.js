@@ -1,19 +1,18 @@
-// Display search bar when the search icon is clicked
+/*global jQuery, window, document, URL, $, event */
+
 jQuery(document).ready(function () {
     jQuery("#searchIcon").click(function () {
         jQuery("#searchIconForm").toggleClass("d-none");
         jQuery("#searchInput").focus();
     });
-    jQuery("#searchInput").click(function (event) {
-        event.stopPropagation();
+    jQuery("#searchInput").click(function (e) {
+        e.stopPropagation();
     });
 });
 
-
-// Function to handle toggle in faq page
-function toggleAnswer(faqId) {
-    let answer = document.getElementById(faqId);
-    let icon = event.target; // Targeting the 'i' element directly
+function toggleAnswer(faqId, e) {
+    var answer = document.getElementById(faqId);
+    var icon = e.target; // Targeting the 'i' element directly
 
     if (answer.style.display === "none") {
         answer.style.display = "block";
@@ -27,44 +26,21 @@ function toggleAnswer(faqId) {
 }
 
 function toggleFAQs() {
-    let faqItems = document.querySelectorAll('.faq-item');
-    let shownFAQs = Array.from(faqItems).filter(faq => faq.style.display !== 'none').length;
+    var faqItems = document.querySelectorAll(".faq-item");
+    var shownFAQs = Array.from(faqItems).filter(function (faq) {
+        return faq.style.display !== "none";
+    }).length;
 
     if (shownFAQs <= 4) {
-        faqItems.forEach(faq => {
-            faq.style.display = 'block';
+        faqItems.forEach(function (faq) {
+            faq.style.display = "block";
         });
-        document.getElementById('viewMoreBtn').innerText = 'VIEW LESS';
+        document.getElementById("viewMoreBtn").innerText = "VIEW LESS";
     } else {
-        for (let i = 4; i < faqItems.length; i++) {
-            faqItems[i].style.display = 'none';
-        }
-        document.getElementById('viewMoreBtn').innerText = 'VIEW MORE';
+        Array.from(faqItems).slice(4).forEach(function (faq) {
+            faq.style.display = "none";
+        });
+        document.getElementById("viewMoreBtn").innerText = "VIEW MORE";
     }
 }
 
-// function products
-$('.btt-link').click(function (e) {
-    window.scrollTo(0, 0);
-});
-
-$('#sort-selector').change(function () {
-    var selector = $(this);
-    var currentUrl = new URL(window.location);
-
-    var selectedVal = selector.val();
-    if (selectedVal != "reset") {
-        var sort = selectedVal.split("_")[0];
-        var direction = selectedVal.split("_")[1];
-
-        currentUrl.searchParams.set("sort", sort);
-        currentUrl.searchParams.set("direction", direction);
-
-        window.location.replace(currentUrl);
-    } else {
-        currentUrl.searchParams.delete("sort");
-        currentUrl.searchParams.delete("direction");
-
-        window.location.replace(currentUrl);
-    }
-});

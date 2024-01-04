@@ -36,10 +36,9 @@
     {% endblock %} 
     
     {% block corejs %}
-    <script
-      src="https://kit.fontawesome.com/e9c73d7092.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/e9c73d7092.js"
+      crossorigin="anonymous"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="{% static 'js/base.js' %}"></script>
     {% endblock %} 
@@ -180,7 +179,7 @@
 
     <div class="flex-grow-1">
         {% block content %}
-        
+
         {% endblock %}
     </div>
 
