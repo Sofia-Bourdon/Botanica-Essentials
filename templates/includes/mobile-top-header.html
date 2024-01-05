@@ -45,12 +45,13 @@
         </div>
     </li>
     <li class="col list-inline-item">
-        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
-            href="{% url 'view_bag' %}">
+        <a class="{% if grand_total %}
+        font-weight-bold{% else %}text-black{% endif %} 
+        nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
             <i class="fas fa-shopping-bag fa-lg"></i>
             <span class="badge badge-light">
-                {% if item_count %}
-                {{ item_count }}
+                {% if product_count %}
+                {{ product_count }}
                 {% else %}
                 0
                 {% endif %}
