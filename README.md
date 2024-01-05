@@ -102,15 +102,14 @@ Botanica Essentials is your go-to online destination for premium skincare produc
 
 **Target Audience**
 
-- Botanica Essentials is a skincare and well-being e-commerce site that was inspired by trendy companies' web pages such as glossier.com and milkmakeup.com
-The website is designed to cater primarily to the specific needs and concerns of young adults (ages 18-30) who either follow trends on social media (TikTok, Youtube, etc.) or are interested in improving or managing the health of their skin. Although, it could also appeal an audience of all ages that is interested in natural beauty or self-care products and advise.
+- Botanica Essentials is a B2C (Business to Customer) e-commerce specialized in skincare and well-being. The site was inspired by trendy companies' web pages such as glossier.com and milkmakeup.com, made to cater primarily to the specific needs and concerns of young adults (ages 18-30) who either follow trends on social media (TikTok, Youtube, etc.) or are interested in improving or managing the health of their skin. Although, it could also appeal an audience of all ages that is interested in natural beauty or self-care products and advise.
 
 
-**Project management with Github Projects:**
+**Project management with Github Projects**
 
 - Project planning and management was vital for the development of the application.
 
-- At Github projects, the user stoires were transformed into issues, assigned into Milestones to later be organized into boards and displayed as "backlog", "In progress" and "Under review" and "Done".
+- At Github projects, the user stories were transformed into issues, assigned into Milestones to later be organized into boards and displayed as "backlog", "In progress" and "Under review" and "Done".
 
 <img width="1512" alt="github_p1" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/1fd0e615-16ba-4f49-bc38-625e6a837531">
 
@@ -121,13 +120,13 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 **Product Planning**
 
-- When planning each of the products present on the website, a word document was created where each product with their respective images, description and sku was put together into a cards and then categorized into "Moisturizers", "Toners" and "Cleansers"
+- When planning each of the products present on the website, a word document was created where each product with their respective images, descriptions and skus were put together into cards and then categorized into "Moisturizers", "Toners" and "Cleansers"
 
 <img width="640" alt="product_planning" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/8621bff1-8ed3-49e0-a0b2-813bc9961248">
 
 **User Stories**
 
-- For each of the features present, user stories were created and managed throught both a specialized excel sheet and as issues using github projects feature.
+- For each of the features present, user stories were created and managed through both a specialized excel sheet and as issues using github projects feature.
 
 <img width="1512" alt="user_stories_excel" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/757ebe56-90ae-4fd9-af18-9076f7713c38">
 
@@ -137,7 +136,7 @@ The website is designed to cater primarily to the specific needs and concerns of
 ## UX Planning
 **Design and Wireframes:**
 
-- When planning the application, the main design was created a balsamiq cloud template, where many of the website page's layout were put together before development. Bellow, you will find the original designs for the application:
+- When planning the application, the main design was created using a balsamiq cloud template, where many of the website pages' layout were put together before development. Below, you will find the original designs for the application:
 
 <img width="1512" alt="home_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/0bab67de-b75a-4aa0-8b13-24f94cf9bbe7">
 
@@ -151,7 +150,7 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 <img width="1512" alt="login_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/63f7a1cd-8fa3-48ee-853d-17322196ad38">
 
- <img width="1512" alt="our_philosophy_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/d9eb3c2f-8e5a-44ab-b4b2-dc9073053b24">
+<img width="1512" alt="our_philosophy_wireframe" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/d9eb3c2f-8e5a-44ab-b4b2-dc9073053b24">
 
 - While most of original designed made through the development and deployment proccess, some designs changed throught development and some were not implemented due to time constraints.
 
@@ -167,10 +166,10 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 - On the top left side of the navbar a link to the newsletter is displayed where they will be redirected to the footer where the newsletter form is located.
   
-- On the top right side of the navbar a utility section is located where the user can find symbolic icons (e.g. A bag for shopping bag) containing useful links.
+- On the top right side of the navbar a utility section is located where the user can find symbolic icons (e.g. a bag for shopping bag) containing useful links.
 
 
-**Product Sorting and Filtering:**
+**Product Sorting and Filtering**
 
 - Users can sort and filter products to access specific categories and further refine results based on predetermined criteria.
 
@@ -185,14 +184,14 @@ The website is designed to cater primarily to the specific needs and concerns of
 - Users can also access "Best Sellers", with products chosen by Botanica Essentials' staff based on perceived popularity.
 
 
-**User Registration feature:**
+**User Registration feature**
 
 <img width="1512" alt="login_page" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/2ba4d82a-41b9-4061-9996-824d42d60247">
 
 <img width="1512" alt="log_out_page" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/f4e065dc-77ec-475f-b13d-b71fd48f23df">
 
 
-- The login and register page links can be found inside the dropdown that is displayed when the user icon inside the navbar is clicked
+- The login and register page links can be found inside the dropdown that is displayed when the user icon inside the navbar is clicked.
   
 - The registration page contains a form for email, username, and password submission. After clicking 'sign up', users are redirected to a verification email page, informing them of a verification email sent to their address.
   
@@ -205,7 +204,7 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 **Wishlist**
 
-- Registered users have access to the wishlist feature. If not logged in, they are redirected to the login page
+- Registered users have access to the wishlist feature. If not logged in, they are redirected to the login page.
   
 - Users can add products to their wishlist by clicking the "empty heart" button next to product prices.
 
@@ -213,7 +212,7 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 - The wishlist is accessible on every page via the top right corner "black heart" button. This feature allows users to preselect products for purchase or save them for later.
   
-- A "hearted" product can also be removed by going to the wishlist page and clicking on "remove"
+- A "hearted" product can also be removed by going to the wishlist page and clicking on "remove".
 
 
 **Shopping Bag**
@@ -244,7 +243,7 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 <img width="1512" alt="checkout_3" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/de3750be-3659-4e0b-935d-8c17c867f817">
 
-- After completing the order successfuly they should be redirected to a success page displaying the order details and a button with a link to the homepage or profile (depending on if they are signed in)
+- After completing the order successfuly they should be redirected to a success page displaying the order details and a button with a link to the homepage or profile (depending on if they are signed in).
 
 
 **Dedicated Blog**
@@ -276,10 +275,9 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 **Store Management**
 
-- To access any of the store management features, the user has to be registered as a *superuser* and be logged in. A superuser can log in through the standart login link provided on the navbar or at /admin.
+- To access any of the store management features, the user has to be registered as a *superuser* and be logged in. A superuser can log in through the standard login link provided on the navbar or at /admin.
 
 <img width="1512" alt="admin_panel_1" src="https://github.com/Sofia-Bourdon/Botanica-Essentials/assets/112895499/3ea59cd7-ae25-4e1a-a36d-68c86be1405f">
-
   
 - Once logged in, the superuser can access the admin panel located at /admin where most of the store management is done. There, they will find sections for managing important information such as products, categories, accounts, customer support and more.
 
@@ -315,11 +313,11 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 - Additional meta description tags wih description and keywords were added for SEO purposes.
   
-- A sitemap file was generated to helps search engines discover URLs inside the site.
+- A sitemap file was generated to help search engines discover URLs inside the site.
   
-- A robots.txt file was added to avoid overloading your site with requests and control site crawlers.
+- A robots.txt file was added to avoid overloading the site with requests and control site crawlers.
   
-- keywords throughout the website were wrapped inside strong tags for emphasis.
+- Keywords throughout the website were wrapped inside strong tags for emphasis.
 
 
 **Future Enhancements**
@@ -328,9 +326,9 @@ The website is designed to cater primarily to the specific needs and concerns of
 
 - A "filled heart" feature that changes the wishlist heart button from empty to filled when a product is added to the wishlist.
 
-- A real newsletter using the mail chimp templates could be created and sent to the user emails regularly alerting them of new products or new deals not to be missed.
+- A real newsletter using the mail chimp templates could be created and sent to the user's email regularly alerting them of new products or new deals not to be missed.
 
-- In the user profile, a new section for keeping track of old payment information or delivery/billing addresses could be added, which would allow the user to keep track and edit old or new personal information added.
+- In the user profile, a new section for keeping track of old payment information or delivery/billing addresses could be added, which would allow the user to keep track and edit old or new personal information.
 
 
 ## Testing and Deployment
