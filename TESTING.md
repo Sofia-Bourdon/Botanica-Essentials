@@ -8,7 +8,7 @@
 * Manual Testing
 * Conclusion
 
-## 1. Introduction
+## Introduction
 This document provides a comprehensive overview of the testing strategies employed for the Botanica Essentials project. Ensuring the robustness, reliability, and user-friendliness of the application was paramount. Both automated and manual testing methods were utilized, encompassing code validation, continuous integration, performance testing, and thorough functionality checks against user stories and pass criteria.
 
 
